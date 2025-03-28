@@ -52,8 +52,7 @@ namespace Bookstore.Data
             base.OnModelCreating(builder);
 
             //Başlangıçta kullanıcıya atanılar rolü sağlar
-            builder.Entity<IdentityUserRole<int>>()
-            .HasData(new IdentityUserRole<int> { UserId = 1, RoleId = 1 });
+            //.....
         }
 
 
