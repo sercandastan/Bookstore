@@ -26,7 +26,7 @@ namespace Bookstore.Models.ModelConfigurations
 
             //Password Hash'leme
             PasswordHasher<AppUser>hasher = new PasswordHasher<AppUser>();
-            user.PasswordHash = hasher.HashPassword(user, "admin123");
+            user.PasswordHash = hasher.HashPassword(user, "Admin_123");
             builder.HasData(user);
         }
     }

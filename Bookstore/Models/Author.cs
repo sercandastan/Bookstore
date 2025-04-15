@@ -6,8 +6,8 @@ namespace Bookstore.Models
     public class Author :IEntity
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public int  BirthYear { get; set; }
+        public string FullName { get; set; }
+        public int? BirthYear { get; set; }
 
         //IEntity
         public DateTime? CreatedAt { get; set; }

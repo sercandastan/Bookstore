@@ -32,15 +32,5 @@ namespace Bookstore.Models
         public AppUser? User { get; set; }
         public ICollection<BookAuthor> BookAuthors { get; set; }
 
-
-
-
-
-
-
-
-
-
-
     }
 }

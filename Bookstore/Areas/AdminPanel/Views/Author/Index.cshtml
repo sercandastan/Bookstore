@@ -1,0 +1,91 @@
+﻿@model List<Bookstore.Models.DTOs.Author.Author_DTO>
+
+@{
+	ViewData["Title"] = "Yazarlar";
+}
+
+<div class="container mt-4">
+
+	<!-- Üst Satır: Başlık ve Sağ Butonlar -->
+	<div class="d-flex justify-content-end align-items-center">
+
+
+		<div class="d-flex just gap-2">
+			<a asp-controller="User" asp-action="Profile" class="btn btn-outline-primary btn-sm">
+				<i class="bi bi-person-circle"></i> Profil
+			</a>
+			<a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary btn-sm">
+				<i class="bi bi-clipboard"></i> Yönetim Paneli
+			</a>
+			<a asp-controller="Login" asp-action="Logout" class="btn btn-outline-danger btn-sm">
+				<i class="bi bi-box-arrow-right"></i> Çıkış Yap
+			</a>
+		</div>
+	</div>
+
+	<!-- Boşluk -->
+	<div class="my-3"></div>
+
+	<!-- Yazar Ekle ve Search Bar -->
+	<div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+		<!-- Kitap Ekle Butonu -->
+		<a asp-action="Create" class="btn btn-success btn-sm">
+			<i class="bi bi-plus-circle me-1"></i> Yazar Ekle
+		</a>
+
+
+		<!-- Ortalanmış Searchbar -->
+		<form method="get" class="d-flex" role="search" style="max-width: 400px; width: 100%; margin: 0 auto;">
+			<input type="text" name="search" value="@ViewBag.SearchTerm" class="form-control form-control-sm" placeholder="Yazar ara..." />
+			<button type="submit" class="btn btn-outline-secondary btn-sm ms-2">
+				<i class="bi bi-search"></i>
+			</button>
+		</form>
+	</div>
+
+
+
+
+		<!-- Yazar Tablosu -->
+		<table class="table table-bordered table-striped table-hover">
+			<thead class="table-light">
+				<tr>
+					<th>Ad Soyad</th>
+					<th>Doğum Yılı</th>
+					<th style="width: 150px;">İşlemler</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var author in Model)
+				{
+					<tr>
+						<td>@author.FullName</td>
+					<td>@(author.BirthYear.HasValue ? author.BirthYear.ToString() : "-")</td>
+
+						<td>
+							<div class="btn-group btn-group-sm">
+								<a asp-area="AdminPanel" asp-controller="Author" asp-action="Edit" asp-route-id="@author.Id"
+								   class="btn btn-warning">
+									<i class="bi bi-pencil"></i> Güncelle
+								</a>
+							<form asp-area="AdminPanel" asp-controller="Author" asp-action="Delete" asp-route-id="@author.Id"
+									  method="post" class="d-inline">
+									@Html.AntiForgeryToken()
+									<button type="submit" class="btn btn-danger"
+											onclick="return confirm('Bu yazarı silmek istediğinize emin misiniz?')">
+										<i class="bi bi-trash"></i> Sil
+									</button>
+								</form>
+							</div>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+
+	@section Scripts {
+		@{
+			await Html.RenderPartialAsync("_ValidationScriptsPartial");
+		}
+	}

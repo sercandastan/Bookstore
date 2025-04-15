@@ -5,7 +5,6 @@ namespace Bookstore.Models
 {
     public class BookAuthor:IEntity
     {
-        public int Id { get; set; }
         public int BookId { get; set; } //FK
         public int AuthorId { get; set; } //FK
 

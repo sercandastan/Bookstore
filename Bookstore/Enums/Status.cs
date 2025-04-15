@@ -2,6 +2,6 @@
 {
     public enum Status
     {
-        Created = 0, Updated = 1, Deleted = 2 
+        Added = 0, Updated = 1, Deleted = 2 
     }
 }

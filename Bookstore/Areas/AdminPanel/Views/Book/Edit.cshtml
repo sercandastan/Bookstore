@@ -1,0 +1,104 @@
+﻿@using Bookstore.Areas.AdminPanel.ViewModels.Book_VM
+@model UpdateBook_VM
+
+@{
+    ViewData["Title"] = "Kitap Güncelle";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-warning">
+        <i class="bi bi-pencil-square me-2"></i>Kitap Güncelle
+    </h2>
+
+    <form asp-area="AdminPanel" asp-controller="Book" asp-action="Edit" method="post" enctype="multipart/form-data" class="bg-light p-4 rounded shadow-sm">
+        @* Kitap ID'si gizli olarak tutulur *@
+        <input type="hidden" asp-for="Id" />
+
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label asp-for="Title" class="form-label">Kitap Adı</label>
+                <input asp-for="Title" class="form-control" placeholder="Kitap adını girin" />
+                <span asp-validation-for="Title" class="text-danger small"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Price" class="form-label">Fiyat</label>
+                <input asp-for="Price" class="form-control" type="number" step="0.01" />
+                <span asp-validation-for="Price" class="text-danger small"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="PublicationYear" class="form-label">Yayın Yılı</label>
+                <input asp-for="PublicationYear" class="form-control" type="number" />
+                <span asp-validation-for="PublicationYear" class="text-danger small"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="EditionNumber" class="form-label">Baskı Sayısı</label>
+                <input asp-for="EditionNumber" class="form-control" type="number" />
+                <span asp-validation-for="EditionNumber" class="text-danger small"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="CoverText" class="form-label">Kapak Yazısı</label>
+                <textarea asp-for="CoverText" class="form-control"></textarea>
+                <span asp-validation-for="CoverText" class="text-danger small"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="CoverImage" class="form-label">Yeni Kapak Görseli (isteğe bağlı)</label>
+                <input asp-for="CoverImage" type="file" class="form-control" />
+                <span class="form-text text-muted">Yüklerseniz eski görselin yerini alır.</span>
+                <span asp-validation-for="CoverImage" class="text-danger small"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="PublisherId" class="form-label">Yayınevi</label>
+                <select asp-for="PublisherId" asp-items="Model.Publishers" class="form-select select2">
+                    <option value="">Yayınevi Seçiniz</option>
+                </select>
+                <span asp-validation-for="PublisherId" class="text-danger small"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="CategoryId" class="form-label">Kategori</label>
+                <select asp-for="CategoryId" asp-items="Model.Categories" class="form-select select2">
+                    <option value="">Kategori Seçiniz</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger small"></span>
+            </div>
+
+            <div class="col-md-12">
+                <label asp-for="AuthorIds" class="form-label">Yazar(lar)</label>
+                <select asp-for="AuthorIds" asp-items="Model.Authors" class="form-select select2" multiple>
+                </select>
+                <span asp-validation-for="AuthorIds" class="text-danger small"></span>
+            </div>
+        </div>
+
+        <div class="mt-4 d-flex gap-2">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save me-1"></i> Güncelle
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle me-1"></i> İptal
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            $('.select2').select2({
+                placeholder: "Seçiniz",
+                width: '100%',
+                allowClear: true
+            });
+        });
+    </script>
+}

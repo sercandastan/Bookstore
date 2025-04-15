@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "📋 Yönetim Paneli";
+}
+
+
+<div class="container mt-5">
+    <!-- Üst Satır: Başlık ve Sağ Butonlar -->
+    <div class="d-flex justify-content-end align-items-center">
+
+
+        <div class="d-flex just gap-2">
+            <a asp-controller="User" asp-action="Profile" class="btn btn-outline-primary btn-sm">
+                <i class="bi bi-person-circle"></i> Profil
+            </a>
+            <a asp-controller="Login" asp-action="Logout" class="btn btn-outline-danger btn-sm">
+                <i class="bi bi-box-arrow-right"></i> Çıkış Yap
+            </a>
+        </div>
+    </div>
+    <h2 class="mb-4 text-primary text-center">📋 Yönetim Paneli</h2>
+
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+
+
+    
+        <!-- Kitap İşlemleri -->
+        <div class="col">
+            <a asp-area="AdminPanel" asp-controller="Book" asp-action="Index" class="text-decoration-none">
+                <div class="card border-success h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center">
+                        <i class="bi bi-book fs-1 text-success"></i>
+                        <h5 class="card-title mt-2">Kitap İşlemleri</h5>
+                        <p class="card-text">Kitapları listele, ekle, güncelle veya sil.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Kategori İşlemleri -->
+        <div class="col">
+            <a asp-area="AdminPanel" asp-controller="Category" asp-action="Index" class="text-decoration-none">
+                <div class="card border-warning h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center">
+                        <i class="bi bi-folder fs-1 text-warning"></i>
+                        <h5 class="card-title mt-2">Kategori İşlemleri</h5>
+                        <p class="card-text">Yeni kategori ekleyin veya var olanları yönetin.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Yayınevi İşlemleri -->
+        <div class="col">
+            <a asp-area="AdminPanel" asp-controller="Publisher" asp-action="Index" class="text-decoration-none">
+                <div class="card border-info h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center">
+                        <i class="bi bi-building fs-1 text-info"></i>
+                        <h5 class="card-title mt-2">Yayınevi İşlemleri</h5>
+                        <p class="card-text">Yayınevlerini ekle, düzenle veya kaldır.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Yazar İşlemleri -->
+        <div class="col">
+            <a asp-area="AdminPanel" asp-controller="Author" asp-action="Index" class="text-decoration-none">
+                <div class="card border-danger h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center">
+                        <i class="bi bi-pen fs-1 text-danger"></i>
+                        <h5 class="card-title mt-2">Yazar İşlemleri</h5>
+                        <p class="card-text">Yazar listesiyle çalış, yeni yazar ekle.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

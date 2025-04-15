@@ -1,0 +1,78 @@
+﻿@model List<Bookstore.Models.DTOs.Publisher.Publisher_DTO>
+
+@{
+	ViewData["Title"] = "Yayınevleri";
+}
+
+<div class="container mt-4">
+
+	<!-- Üst Menü: Profil ve Çıkış -->
+	<div class="d-flex justify-content-end align-items-center">
+		<div class="d-flex gap-2">
+			<a asp-controller="User" asp-action="Profile" class="btn btn-outline-primary btn-sm">
+				<i class="bi bi-person-circle"></i> Profil
+			</a>
+			<a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary btn-sm">
+				<i class="bi bi-clipboard"></i> Yönetim Paneli
+			</a>
+
+			<a asp-controller="Login" asp-action="Logout" class="btn btn-outline-danger btn-sm">
+				<i class="bi bi-box-arrow-right"></i> Çıkış Yap
+			</a>
+		</div>
+	</div>
+
+	<div class="my-3"></div>
+
+	<!-- Yayınevi Ekle + Search -->
+	<div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+		<a asp-action="Create" class="btn btn-success btn-sm">
+			<i class="bi bi-plus-circle me-1"></i> Yayınevi Ekle
+		</a>
+
+		<form method="get" class="d-flex" role="search" style="max-width: 400px; width: 100%; margin: 0 auto;">
+			<input type="text" name="search" value="@ViewBag.SearchTerm" class="form-control form-control-sm" placeholder="Yayınevi ara..." />
+			<button type="submit" class="btn btn-outline-secondary btn-sm ms-2">
+				<i class="bi bi-search"></i>
+			</button>
+		</form>
+	</div>
+
+	<h2 class="mb-0">🏢 Yayınevi Listesi</h2>
+
+	<table class="table table-bordered table-striped table-hover mt-3">
+		<thead class="table-light">
+			<tr>
+				<th>Yayınevi Adı</th>
+				<th style="width: 150px;">İşlemler</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var publisher in Model)
+			{
+				<tr>
+					<td>@publisher.PublisherName</td>
+					<td>
+						<div class="btn-group btn-group-sm">
+							<a asp-action="Edit" asp-route-id="@publisher.Id" class="btn btn-warning">
+								<i class="bi bi-pencil"></i> Güncelle
+							</a>
+							<form asp-action="Delete" asp-route-id="@publisher.Id" method="post" class="d-inline">
+								@Html.AntiForgeryToken()
+								<button type="submit" class="btn btn-danger" onclick="return confirm('Bu yayınevini silmek istediğinize emin misiniz?')">
+									<i class="bi bi-trash"></i> Sil
+								</button>
+							</form>
+						</div>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

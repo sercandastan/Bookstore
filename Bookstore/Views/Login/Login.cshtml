@@ -1,0 +1,49 @@
+﻿@model Bookstore.Models.DTOs.Login.Login_DTO
+
+
+@{
+	ViewData["Title"] = "Login";
+}
+
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card shadow p-5" style="max-width: 400px; width: 100%;">
+        <div class="text-center mb-4">
+            <h3 class="fw-bold">📚 Bookstore</h3>
+            <p class="text-muted mb-0">Lütfen giriş yapın</p>
+        </div>
+
+        <form asp-controller="Login" asp-action="Login" method="post">
+
+            <div class="mb-3">
+                <label asp-for="EmailOrUserName" class="form-label">E-posta veya Kullanıcı Adı</label>
+                <input asp-for="EmailOrUserName" class="form-control" placeholder="örnek: admin veya admin@admin.com" value="Admin" />
+                <span asp-validation-for="EmailOrUserName" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Şifre</label>
+                <input asp-for="Password" class="form-control" type="password" placeholder="Şifrenizi girin" value="Admin_123">
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-box-arrow-in-right"></i> Giriş Yap
+                </button>
+            </div>
+        </form>
+
+        <div class="text-center">
+            <a asp-action="ForgotPassword" class="text-decoration-none small">Şifremi Unuttum</a>
+        </div>
+    </div>
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

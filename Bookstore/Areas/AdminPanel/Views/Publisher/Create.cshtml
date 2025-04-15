@@ -1,0 +1,34 @@
+﻿@model Bookstore.Areas.AdminPanel.ViewModels.Publisher_VM.CreatePublisher_VM
+
+@{
+    ViewData["Title"] = "Yayınevi Ekle";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">
+        <i class="bi bi-building-add me-2"></i>Yeni Yayınevi Ekle
+    </h2>
+
+    <form asp-action="Create" method="post" class="bg-light p-4 rounded shadow-sm">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="PublisherName" class="form-label">Yayınevi Adı</label>
+            <input asp-for="PublisherName" class="form-control" placeholder="Yayınevi adını giriniz..." />
+            <span asp-validation-for="PublisherName" class="text-danger small"></span>
+        </div>
+
+        <div class="mt-4 d-flex gap-2">
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-save me-1"></i> Kaydet
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle me-1"></i> Geri Dön
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

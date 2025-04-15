@@ -1,0 +1,53 @@
+﻿@model Bookstore.Areas.AdminPanel.ViewModels.Author_VM.CreateAuthor_VM
+
+@{
+	ViewData["Title"] = "Yeni Yazar Ekle";
+}
+
+<div class="container mt-4">
+	<h2 class="mb-4 text-primary">
+		<i class="bi bi-person-plus me-2"></i>Yeni Yazar Ekle
+	</h2>
+
+
+	<form asp-area="AdminPanel" asp-controller="Author" asp-action="Create" method="post" class="bg-light p-4 rounded shadow-sm">
+		@Html.AntiForgeryToken()
+
+
+		<div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+
+
+		<!-- Ad Soyad -->
+		<div class="mb-3">
+			<label asp-for="FullName" class="form-label">Adı Soyad</label>
+			<input asp-for="FullName" class="form-control" placeholder="Yazar adı (örn: Orhan Pamuk)" />
+			<span asp-validation-for="FullName" class="text-danger small"></span>
+		</div>
+
+		<!-- Doğum Yılı -->
+		<div class="mb-3">
+			<label asp-for="BirthYear" class="form-label">Doğum Yılı</label>
+			<input asp-for="BirthYear" type="number" class="form-control" placeholder="Örn: 1985" min="1000" max="9999" />
+			<span asp-validation-for="BirthYear" class="text-danger small"></span>
+
+		</div>
+
+		<!-- Butonlar -->
+		<div class="mt-4 d-flex gap-2">
+			<button type="submit" class="btn btn-primary">
+				<i class="bi bi-save me-1"></i> Kaydet
+			</button>
+			<a asp-action="Index" class="btn btn-secondary">
+				<i class="bi bi-arrow-left-circle me-1"></i> İptal
+			</a>
+		</div>
+	</form>
+</div>
+
+<!-- ✅ Script kısmı validation için önemli -->
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

@@ -1,0 +1,78 @@
+﻿@model List<Bookstore.Models.DTOs.Category.Category_DTO>
+
+@{
+    ViewData["Title"] = "Kategoriler";
+}
+
+<div class="container mt-4">
+
+    <!-- Üst Satır: Sağ Butonlar -->
+    <div class="d-flex justify-content-end align-items-center">
+        <div class="d-flex gap-2">
+            <a asp-controller="User" asp-action="Profile" class="btn btn-outline-primary btn-sm">
+                <i class="bi bi-person-circle"></i> Profil
+            </a>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary btn-sm">
+                <i class="bi bi-clipboard"></i> Yönetim Paneli
+            </a>
+            <a asp-controller="Login" asp-action="Logout" class="btn btn-outline-danger btn-sm">
+                <i class="bi bi-box-arrow-right"></i> Çıkış Yap
+            </a>
+        </div>
+    </div>
+
+    <!-- Boşluk -->
+    <div class="my-3"></div>
+
+    <!-- Kategori Ekle ve Arama -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+        <a asp-action="Create" class="btn btn-success btn-sm">
+            <i class="bi bi-plus-circle me-1"></i> Kategori Ekle
+        </a>
+
+        <form method="get" class="d-flex" role="search" style="max-width: 400px; width: 100%; margin: 0 auto;">
+            <input type="text" name="search" value="@ViewBag.SearchTerm" class="form-control form-control-sm" placeholder="Kategori ara..." />
+            <button type="submit" class="btn btn-outline-secondary btn-sm ms-2">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+    </div>
+
+    <h2 class="mb-3">📂 Kategori Listesi</h2>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Kategori Adı</th>
+                <th style="width: 150px;">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.CategoryName</td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <a asp-area="AdminPanel" asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="btn btn-warning">
+                                <i class="bi bi-pencil"></i> Güncelle
+                            </a>
+                            <form asp-area="AdminPanel" asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Bu kategoriyi silmek istediğinize emin misiniz?')">
+                                    <i class="bi bi-trash"></i> Sil
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
