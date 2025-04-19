@@ -20,7 +20,7 @@
 					<img src="/BookCoverImages/defaultBookCover.png" class="card-img-top img-fluid rounded" style="object-fit: cover; height: 400px;" alt="Kapak Görseli" />
 					<div class="card-body text-center">
 						<label asp-for="CoverImage" class="form-label">Kapak Görseli Seç</label>
-						<input asp-for="CoverImage" type="file" class="form-control" />
+						<input asp-for="CoverImage" type="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.webp" />
 						<span class="form-text text-muted">Seçilmezse varsayılan görsel kullanılır.</span>
 						<span asp-validation-for="CoverImage" class="text-danger small"></span>
 					</div>
