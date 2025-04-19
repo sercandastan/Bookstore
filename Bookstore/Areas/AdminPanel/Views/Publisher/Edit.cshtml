@@ -5,37 +5,44 @@
 }
 
 <div class="container mt-4">
-    <h2 class="mb-4 text-warning">
-        <i class="bi bi-pencil-square me-2"></i>Yayınevi Güncelle
-    </h2>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-warning mb-0">
+            <i class="bi bi-pencil-square me-2"></i>Yayınevi Güncelle
+        </h2>
+        <a asp-action="Index" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left-circle me-1"></i> Geri Dön
+        </a>
+    </div>
 
-    <form asp-area="AdminPanel" asp-controller="Publisher" asp-action="Edit" method="post" class="bg-light p-4 rounded shadow-sm">
-        @Html.AntiForgeryToken()
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <form asp-area="AdminPanel" asp-controller="Publisher" asp-action="Edit" method="post">
+                @Html.AntiForgeryToken()
 
-        <input type="hidden" asp-for="Id" />
-        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
-        <!-- Yayınevi Adı -->
-        <div class="mb-3">
-            <label asp-for="PublisherName" class="form-label">Yayınevi Adı</label>
-            <input asp-for="PublisherName" class="form-control" placeholder="Yayınevi adını giriniz" />
-            <span asp-validation-for="PublisherName" class="text-danger small"></span>
+                <!-- Yayınevi Adı -->
+                <div class="mb-3">
+                    <label asp-for="PublisherName" class="form-label fw-semibold">Yayınevi Adı</label>
+                    <input asp-for="PublisherName" class="form-control" placeholder="Örn: Alfa Yayınları" />
+                    <span asp-validation-for="PublisherName" class="text-danger small"></span>
+                </div>
+
+                <!-- Butonlar -->
+                <div class="d-flex justify-content-end gap-2 mt-4">
+                    <button type="submit" class="btn btn-warning">
+                        <i class="bi bi-save me-1"></i> Güncelle
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-x-circle me-1"></i> İptal
+                    </a>
+                </div>
+            </form>
         </div>
-
-        <!-- Butonlar -->
-        <div class="mt-4 d-flex gap-2">
-            <button type="submit" class="btn btn-warning">
-                <i class="bi bi-save me-1"></i> Güncelle
-            </button>
-            <a asp-action="Index" class="btn btn-secondary">
-                <i class="bi bi-arrow-left-circle me-1"></i> İptal
-            </a>
-        </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

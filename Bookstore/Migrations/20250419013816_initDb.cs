@@ -322,14 +322,18 @@ namespace Bookstore.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "69f5da12-00d6-4b8d-b5e5-00f321406176", "Admin", "ADMIN" },
-                    { 2, "9f111b1f-d146-4893-a567-43dafa100620", "User", "USER" }
+                    { 1, "18bac0b4-2322-4c93-b6a7-d3a16da73848", "Admin", "ADMIN" },
+                    { 2, "c0b8c12a-cbb9-4816-b0c8-c09ecfc8ac71", "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "Gender", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "fb866109-0cb7-4d3b-8f5a-dbafb2640153", "admin@admin.com", false, 0, false, null, "Super", "ADMIN@ADMIN.COM", "ADMIN", "AQAAAAIAAYagAAAAEPaJdmhbv1gFnBzqyRsQTfOKrSRVnEcduzr1p3O8sHkZIDzwUU0DzezNncblQAQK5g==", null, false, "3fddae33-8b57-49eb-b229-fc23408b35d4", "Admin", false, "Admin" });
+                values: new object[,]
+                {
+                    { 1, 0, "859c5771-0f2c-4133-b4d1-6598420019c0", "admin@admin.com", false, 0, false, null, "Super", "ADMIN@ADMIN.COM", "ADMIN", "AQAAAAIAAYagAAAAEDZvVyoyyLtr1k+KBo+VwpkowlQhXCDngHTdY+wLESnjVSJSmLz4hxSGkndMc8FDRg==", null, false, "dc643701-f60e-41fd-94e8-29ebc5bd5e9e", "Admin", false, "Admin" },
+                    { 2, 0, "df3c3406-442b-4049-a168-9fe4c758c235", "sercandastan@hotmail.com", false, 0, false, null, "Sercan", "SERCANDASTAN@HOTMAIL.COM", "SERCANDASTAN", "AQAAAAIAAYagAAAAEPKctuV3HV+94EcFFWAQfKqngXhFUj+j1LbZCl5QUhyVCU/Vejp/LthAoP5dHc3Y0g==", null, false, "b9b86860-2c1a-4892-83c7-1efa1ccfb61a", "Daştan", false, "sercandastan" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Authors",
@@ -385,23 +389,27 @@ namespace Bookstore.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { 1, 1 });
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 2, 2 }
+                });
 
             migrationBuilder.InsertData(
                 table: "Books",
                 columns: new[] { "Id", "CategoryId", "CoverImage", "CoverText", "CreatedAt", "DeletedAt", "EditionNumber", "Price", "PublicationYear", "PublisherId", "Status", "Title", "UpdatedAt", "UserId" },
                 values: new object[,]
                 {
-                    { 1, 8, "", "Hayatın olasılıkları üzerine etkileyici bir hikaye.", null, null, 1, 120m, (short)2020, 1, null, "Gece Yarısı Kütüphanesi", null, 1 },
-                    { 2, 2, "", "Distopik bir geleceğin sert tasviri.", null, null, 5, 90m, (short)1949, 2, null, "1984", null, 1 },
-                    { 3, 6, "", "Zarafet ve sınıf çatışmalarının romanı.", null, null, 3, 85m, (short)1813, 3, null, "Aşk ve Gurur", null, 1 },
-                    { 4, 3, "", "Korku dolu bir kasaba ve geçmişin karanlığı.", null, null, 2, 110m, (short)1986, 4, null, "O", null, 1 },
-                    { 5, 7, "", "Büyücü bir çocuğun destansı yolculuğu.", null, null, 1, 100m, (short)1997, 5, null, "Harry Potter ve Felsefe Taşı", null, 1 },
-                    { 6, 5, "", "Gerilim ve gizemin en iyi örneklerinden.", null, null, 4, 95m, (short)1939, 6, null, "On Küçük Zenci", null, 1 },
-                    { 7, 9, "", "Rusya'nın tarihsel ve kültürel panoraması.", null, null, 2, 130m, (short)1869, 7, null, "Savaş ve Barış", null, 1 },
-                    { 8, 1, "", "Direnişin ve yalnızlığın metaforu.", null, null, 2, 80m, (short)1952, 8, null, "Yaşlı Adam ve Deniz", null, 1 },
-                    { 9, 2, "", "Paralel evrende geçen gizemli bir yolculuk.", null, null, 1, 125m, (short)2009, 9, null, "1Q84", null, 1 },
-                    { 10, 10, "", "Bir ailenin kuşaklar arası büyülü hikayesi.", null, null, 3, 115m, (short)1967, 10, null, "Yüzyıllık Yalnızlık", null, 1 }
+                    { 1, 8, "/BookCoverImages/gyk.jpg", "Hayatın olasılıkları üzerine etkileyici bir hikaye.", null, null, 1, 120m, (short)2020, 1, null, "Gece Yarısı Kütüphanesi", null, 1 },
+                    { 2, 2, "/BookCoverImages/1984.jpg", "Distopik bir geleceğin sert tasviri.", null, null, 5, 90m, (short)1949, 2, null, "1984", null, 1 },
+                    { 3, 6, "/BookCoverImages/avg.jpg", "Zarafet ve sınıf çatışmalarının romanı.", null, null, 3, 85m, (short)1813, 3, null, "Aşk ve Gurur", null, 1 },
+                    { 4, 3, "/BookCoverImages/O.jpg", "Korku dolu bir kasaba ve geçmişin karanlığı.", null, null, 2, 110m, (short)1986, 4, null, "O", null, 1 },
+                    { 5, 7, "/BookCoverImages/hpvft.jpg", "Büyücü bir çocuğun destansı yolculuğu.", null, null, 1, 100m, (short)1997, 5, null, "Harry Potter ve Felsefe Taşı", null, 1 },
+                    { 6, 5, "/BookCoverImages/okz.jpg", "Gerilim ve gizemin en iyi örneklerinden.", null, null, 4, 95m, (short)1939, 6, null, "On Küçük Zenci", null, 1 },
+                    { 7, 9, "/BookCoverImages/svb.jpg", "Rusya'nın tarihsel ve kültürel panoraması.", null, null, 2, 130m, (short)1869, 7, null, "Savaş ve Barış", null, 1 },
+                    { 8, 1, "/BookCoverImages/yavd.jpg", "Direnişin ve yalnızlığın metaforu.", null, null, 2, 80m, (short)1952, 8, null, "Yaşlı Adam ve Deniz", null, 1 },
+                    { 9, 2, "/BookCoverImages/1q84.jpg", "Paralel evrende geçen gizemli bir yolculuk.", null, null, 1, 125m, (short)2009, 9, null, "1Q84", null, 1 },
+                    { 10, 10, "/BookCoverImages/yy.jpg", "Bir ailenin kuşaklar arası büyülü hikayesi.", null, null, 3, 115m, (short)1967, 10, null, "Yüzyıllık Yalnızlık", null, 1 }
                 });
 
             migrationBuilder.InsertData(

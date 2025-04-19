@@ -20,10 +20,10 @@ namespace Bookstore.Data
 
         //DbSets
 
-        public DbSet<AppUser> Users { get; set; } 
+        public DbSet<AppUser> Users { get; set; }
 
         public DbSet<Author> Authors { get; set; }
-        
+
         public DbSet<Book> Books { get; set; }
 
         public DbSet<BookAuthor> BookAuthors { get; set; }
@@ -34,7 +34,7 @@ namespace Bookstore.Data
 
         public DbSet<Publisher> Publishers { get; set; }
 
-        
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -42,7 +42,7 @@ namespace Bookstore.Data
             {
                 optionsBuilder.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
             }
-                base.OnConfiguring(optionsBuilder);
+            base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -52,8 +52,9 @@ namespace Bookstore.Data
             base.OnModelCreating(builder);
 
             //Başlangıçta kullanıcıya atanılar rolü sağlar
-            builder.Entity<IdentityUserRole<int>>()
-            .HasData(new IdentityUserRole<int> { UserId = 1, RoleId = 1 });
+            builder.Entity<IdentityUserRole<int>>().HasData(
+                new IdentityUserRole<int> { UserId = 1, RoleId = 1 },
+                new IdentityUserRole<int> { UserId = 2, RoleId = 2 });
         }
 
 

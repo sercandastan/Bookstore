@@ -8,7 +8,7 @@ namespace Bookstore.Models.ModelConfigurations
     {
         public void Configure(EntityTypeBuilder<AppUser> builder)
         {
-            AppUser user = new AppUser()
+            AppUser admin = new AppUser()
             {
                 Id = 1,
                 Name = "Super",
@@ -24,10 +24,29 @@ namespace Bookstore.Models.ModelConfigurations
 
             };
 
+            AppUser user = new AppUser()
+            {
+                Id = 2,
+                Name = "Sercan",
+                Surname = "Daştan",
+                UserName = "sercandastan",
+                NormalizedUserName = "SERCANDASTAN",
+                Email = "sercandastan@hotmail.com",
+                NormalizedEmail = "SERCANDASTAN@HOTMAIL.COM",
+                Gender = Enums.Gender.Male,
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+                SecurityStamp = Guid.NewGuid().ToString(),
+                EmailConfirmed = false
+
+            };
+
             //Password Hash'leme
-            PasswordHasher<AppUser>hasher = new PasswordHasher<AppUser>();
-            user.PasswordHash = hasher.HashPassword(user, "Admin_123");
-            builder.HasData(user);
+            PasswordHasher<AppUser> passwordHasher = new PasswordHasher<AppUser>();
+            admin.PasswordHash = passwordHasher.HashPassword(admin, "Admin_123");
+            user.PasswordHash = passwordHasher.HashPassword(user, "Sercan_123");
+            builder.HasData(admin,user);
+
+            
         }
     }
 }

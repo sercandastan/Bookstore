@@ -44,6 +44,11 @@ namespace Bookstore.Mapper
             CreateMap<UpdateBook_VM, UpdateBook_DTO>()
                 .ForMember(dest => dest.AuthorIds, opt => opt.MapFrom(src => src.AuthorIds));
 
+            CreateMap<BookDetail_DTO, UpdateBook_VM>()
+                 .ForMember(dest => dest.CoverImage, opt => opt.Ignore())
+                 .ReverseMap();
+
+
 
 
 
@@ -59,6 +64,7 @@ namespace Bookstore.Mapper
             CreateMap<CreateCategory_VM, CreateCategory_DTO>().ReverseMap();
             CreateMap<UpdateCategory_VM, UpdateCategory_DTO>().ReverseMap();
             CreateMap<Category_DTO, UpdateCategory_VM>().ReverseMap();
+
 
 
 

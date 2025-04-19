@@ -23,6 +23,9 @@ namespace Bookstore.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(Login_DTO login)
         {
+
+
+
             if (ModelState.IsValid)
             {
                 AppUser user = null;
@@ -38,16 +41,25 @@ namespace Bookstore.Controllers
 
                     if (isPasswordCorrect)
                     {
+
+
                         await _signInManager.SignInAsync(user, false);
                         bool isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
 
+                        var getUser = await _userManager.GetUserAsync(User);
+                        var name = getUser?.Name ?? getUser?.UserName ?? "Kullanıcı";
+
                         if (isAdmin)
                         {
+                            TempData["ToastMessage"] = $"👋 {getUser}, hoşgeldin.";
+                            TempData["ToastType"] = "success";
                             return Redirect("~/AdminPanel/Home/Index");
                         }
                         else
                         {
-                            return RedirectToAction("Index", "Panel", new { area = "UserPanel" });
+                            TempData["ToastMessage"] = $"👋 {getUser}, hoşgeldin.";
+                            TempData["ToastType"] = "success";
+                            return RedirectToAction("Index", "Home", new { area = "UserPanel" });
                         }
                     }
                 }
@@ -56,11 +68,16 @@ namespace Bookstore.Controllers
             return View();
         }
 
-
+        [HttpGet]
         public async Task<IActionResult> Logout()
         {
+            var user = await _userManager.GetUserAsync(User);
+            var name = user?.Name ?? user?.UserName ?? "Kullanıcı";
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index");
+
+            TempData["ToastMessage"] = $"👋 {name}, güle güle! Tekrar bekleriz.";
+            TempData["ToastType"] = "info";
+            return RedirectToAction("Login", "Login");
         }
     }
 }

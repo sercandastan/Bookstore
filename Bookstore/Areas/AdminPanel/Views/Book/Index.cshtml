@@ -1,110 +1,109 @@
 ﻿@model List<Bookstore.Models.DTOs.Book.Book_DTO>
 
 @{
-    ViewData["Title"] = "Kitaplar";
+	ViewData["Title"] = "Kitaplar";
 }
 
 <div class="container mt-4">
+	<!-- Başlık ve Eylemler -->
+	<div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+		<h2 class="text-primary m-0">
+			<i class="bi bi-book me-1"></i> Kitap Listesi
+		</h2>
 
-    <!-- Üst Satır: Başlık ve Sağ Butonlar -->
-    <div class="d-flex justify-content-end align-items-center">
-       
+		<div class="d-flex gap-2">
+			<a asp-action="Create" class="btn btn-success btn-sm">
+				<i class="bi bi-plus-circle me-1"></i> Kitap Ekle
+			</a>
 
-        <div class="d-flex just gap-2">
-            <a asp-controller="User" asp-action="Profile" class="btn btn-outline-primary btn-sm">
-                <i class="bi bi-person-circle"></i> Profil
-            </a>
-            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary btn-sm">
-                <i class="bi bi-clipboard"></i> Yönetim Paneli
-            </a>
-            <a asp-controller="Login" asp-action="Logout" class="btn btn-outline-danger btn-sm">
-                <i class="bi bi-box-arrow-right"></i> Çıkış Yap
-            </a>
-        </div>
-    </div>
+			<form method="get" class="d-flex" style="max-width: 300px;">
+				<input type="text" name="search" value="@ViewBag.SearchTerm"
+					   class="form-control form-control-sm" placeholder="Kitap, yazar, kategori..." />
+				<button type="submit" class="btn btn-outline-secondary btn-sm ms-2">
+					<i class="bi bi-search"></i>
+				</button>
+			</form>
+		</div>
+	</div>
 
-    <!-- Boşluk -->
-    <div class="my-3"></div>
+	<!-- Liste -->
+	<div class="table-responsive shadow-sm rounded-3 overflow-hidden">
+		<table class="table table-hover align-middle text-center">
+			<thead class="table-light">
+				<tr>
+					<th>Kapak</th>
+					<th>Adı</th>
+					<th>Fiyat</th>
+					<th>Yıl</th>
+					<th>Baskı</th>
+					<th>Kategori</th>
+					<th>Yayınevi</th>
+					<th>Yazar(lar)</th>
+					<th>Açıklama</th>
+					<th>İşlemler</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var book in Model)
+				{
+					<tr>
+						<td>
+							<img src="@(string.IsNullOrWhiteSpace(book.CoverImage)
+        ? "/BookCoverImages/defaultBookCover.png"
+        : book.CoverImage)"
+								 class="rounded shadow-sm"
+								 style="max-height: 60px; max-width: 40px;" alt="Kapak" />
 
-    <!-- Kitap Ekle ve Search Bar -->
-    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
-        <!-- Kitap Ekle Butonu -->
-        <a asp-action="Create" class="btn btn-success btn-sm">
-            <i class="bi bi-plus-circle me-1"></i> Kitap Ekle
-        </a>
-
-
-        <!-- Ortalanmış Searchbar -->
-        <form method="get" class="d-flex" role="search" style="max-width: 400px; width: 100%; margin: 0 auto;">
-            <input type="text" name="search" value="@ViewBag.SearchTerm" class="form-control form-control-sm" placeholder="Kitap, yazar, kategori veya yayınevi ara..." />
-            <button type="submit" class="btn btn-outline-secondary btn-sm ms-2">
-                <i class="bi bi-search"></i>
-            </button>
-        </form>
-
-    </div>
-    <h2 class="mb-0">📚 Kitap Listesi</h2>
-    <table class="table table-bordered table-striped table-hover">
-        <thead class="table-light">
-            <tr>
-                <th>Kapak</th>
-                <th>Kitap Adı</th>
-                <th>Fiyat</th>
-                <th>Yayın Yılı</th>
-                <th>Baskı</th>
-                <th>Kategori</th>
-                <th>Yayınevi</th>
-                <th>Yazar(lar)</th>
-                <th>Açıklama</th>
-                <th style="width: 150px;">İşlemler</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var book in Model)
-            {
-                <tr>
-                    <td>
-                        <img src="@(string.IsNullOrEmpty(book.CoverImage) ? "/BookCoverImages/defaultBookCover.png" : book.CoverImage)"
-                             class="img-fluid rounded" style="max-height: 60px;" alt="Kapak Görseli" />
-                    </td>
-                    <td>@book.Title</td>
-                    <td>@book.Price.ToString("C")</td>
-                    <td>@book.PublicationYear</td>
-                    <td>@book.EditionNumber</td>
-                    <td>@(string.IsNullOrEmpty(book.CategoryName) ? "Kategori yok" : book.CategoryName)</td>
-                    <td>@(string.IsNullOrEmpty(book.PublisherName) ? "Yayınevi yok" : book.PublisherName)</td>
-                    <td>
-                        @if (book.AuthorNames != null && book.AuthorNames.Any())
-                        {
-                            @string.Join(", ", book.AuthorNames)
-                        }
-                        else
-                        {
-                            <span class="text-muted">Yazar bilgisi yok</span>
-                        }
-                    </td>
-                    <td>@book.CoverText</td>
-                    <td>
-                        <div class="btn-group btn-group-sm">
-                            <a asp-area="AdminPanel" asp-controller="Book" asp-action="Edit" asp-route-id="@book.Id"  method="post" class="btn btn-warning">
-                                <i class="bi bi-pencil"></i> Güncelle
-                            </a>
-                            <form asp-area="AdminPanel" asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id" method="post" class="d-inline">
-                                @Html.AntiForgeryToken()
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Bu kitabı silmek istediğinize emin misiniz?')">
-                                    <i class="bi bi-trash"></i> Sil
-                                </button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+						</td>
+						<td>@book.Title</td>
+						<td><span class="badge bg-light text-dark">₺@book.Price.ToString("N2")</span></td>
+						<td>@book.PublicationYear</td>
+						<td>@book.EditionNumber</td>
+						<td>
+							<span class="badge bg-info-subtle text-dark">@book.CategoryName</span>
+						</td>
+						<td>
+							<span class="badge bg-warning-subtle text-dark">@book.PublisherName</span>
+						</td>
+						<td>
+							@if (book.AuthorNames != null && book.AuthorNames.Any())
+							{
+								<span class="text-muted small">@string.Join(", ", book.AuthorNames)</span>
+							}
+							else
+							{
+								<span class="text-muted small">Yazar yok</span>
+							}
+						</td>
+						<td>
+							<span class="text-muted small text-wrap d-inline-block" style="max-width: 250px;">
+								@book.CoverText
+							</span>
+						</td>
+						<td>
+							<div class="btn-group btn-group-sm">
+								<a asp-area="AdminPanel" asp-controller="Book" asp-action="Edit" asp-route-id="@book.Id"
+								   class="btn btn-outline-primary" title="Düzenle">
+									<i class="bi bi-pencil-fill"></i>
+								</a>
+								<form asp-area="AdminPanel" asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id" method="post" class="d-inline">
+									@Html.AntiForgeryToken()
+									<button type="submit" class="btn btn-outline-danger"
+											onclick="return confirm('Bu kitabı silmek istediğinize emin misiniz?')" title="Sil">
+										<i class="bi bi-trash-fill"></i>
+									</button>
+								</form>
+							</div>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }

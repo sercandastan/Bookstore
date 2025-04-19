@@ -29,7 +29,7 @@ namespace Bookstore.Models.ModelConfigurations
                     CategoryId = 8,
                     PublisherId = 1,
                     CoverText = "Hayatın olasılıkları üzerine etkileyici bir hikaye.",
-                    CoverImage = "",
+                    CoverImage = "/BookCoverImages/gyk.jpg",
                     UserId = 1,
                     
                 },
@@ -43,7 +43,7 @@ namespace Bookstore.Models.ModelConfigurations
                     CategoryId = 2,
                     PublisherId = 2,
                     CoverText = "Distopik bir geleceğin sert tasviri.",
-                    CoverImage = "",
+                    CoverImage = "/BookCoverImages/1984.jpg",
                     UserId = 1
                 },
                 new Book
@@ -56,7 +56,7 @@ namespace Bookstore.Models.ModelConfigurations
                     CategoryId = 6,
                     PublisherId = 3,
                     CoverText = "Zarafet ve sınıf çatışmalarının romanı.",
-                    CoverImage = "",
+                    CoverImage = "/BookCoverImages/avg.jpg",
                     UserId = 1
                 },
                 new Book
@@ -69,7 +69,7 @@ namespace Bookstore.Models.ModelConfigurations
                     CategoryId = 3,
                     PublisherId = 4,
                     CoverText = "Korku dolu bir kasaba ve geçmişin karanlığı.",
-                    CoverImage = "",
+                    CoverImage = "/BookCoverImages/O.jpg",
                     UserId = 1
                 },
                 new Book
@@ -82,7 +82,7 @@ namespace Bookstore.Models.ModelConfigurations
                     CategoryId = 7,
                     PublisherId = 5,
                     CoverText = "Büyücü bir çocuğun destansı yolculuğu.",
-                    CoverImage = "",
+                    CoverImage = "/BookCoverImages/hpvft.jpg",
                     UserId = 1
                 },
                 new Book
@@ -95,7 +95,7 @@ namespace Bookstore.Models.ModelConfigurations
                     CategoryId = 5,
                     PublisherId = 6,
                     CoverText = "Gerilim ve gizemin en iyi örneklerinden.",
-                    CoverImage = "",
+                    CoverImage = "/BookCoverImages/okz.jpg",
                     UserId = 1
                 },
                 new Book
@@ -108,7 +108,7 @@ namespace Bookstore.Models.ModelConfigurations
                     CategoryId = 9,
                     PublisherId = 7,
                     CoverText = "Rusya'nın tarihsel ve kültürel panoraması.",
-                    CoverImage = "",
+                    CoverImage = "/BookCoverImages/svb.jpg",
                     UserId = 1
                 },
                 new Book
@@ -121,7 +121,7 @@ namespace Bookstore.Models.ModelConfigurations
                     CategoryId = 1,
                     PublisherId = 8,
                     CoverText = "Direnişin ve yalnızlığın metaforu.",
-                    CoverImage = "",
+                    CoverImage = "/BookCoverImages/yavd.jpg",
                     UserId = 1
                 },
                 new Book
@@ -134,7 +134,7 @@ namespace Bookstore.Models.ModelConfigurations
                     CategoryId = 2,
                     PublisherId = 9,
                     CoverText = "Paralel evrende geçen gizemli bir yolculuk.",
-                    CoverImage = "",
+                    CoverImage = "/BookCoverImages/1q84.jpg",
                     UserId = 1
                 },
                 new Book
@@ -147,7 +147,7 @@ namespace Bookstore.Models.ModelConfigurations
                     CategoryId = 10,
                     PublisherId = 10,
                     CoverText = "Bir ailenin kuşaklar arası büyülü hikayesi.",
-                    CoverImage = "",
+                    CoverImage = "/BookCoverImages/yy.jpg",
                     UserId = 1
                 }
             );

@@ -1,0 +1,21 @@
+﻿<!-- Modal: Yazar Ekle -->
+<div class="modal fade" id="addAuthorModal" tabindex="-1" aria-labelledby="addAuthorLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content shadow-lg">
+			<div class="modal-header bg-info text-white">
+				<h5 class="modal-title" id="addAuthorLabel"><i class="bi bi-person-plus me-2"></i>Yeni Yazar Ekle</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+			</div>
+			<form id="authorModalForm">
+				<div class="modal-body">
+					<input name="FullName" class="form-control mb-2" placeholder="Ad Soyad" required />
+					<input name="BirthYear" class="form-control" type="number" placeholder="Doğum Yılı (isteğe bağlı)" />
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-success"><i class="bi bi-save me-1"></i> Kaydet</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bookstore.Migrations
 {
     [DbContext(typeof(BookstoreDbContext))]
-    [Migration("20250415213239_initDb")]
+    [Migration("20250419013816_initDb")]
     partial class initDb
     {
         /// <inheritdoc />
@@ -58,14 +58,14 @@ namespace Bookstore.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "69f5da12-00d6-4b8d-b5e5-00f321406176",
+                            ConcurrencyStamp = "18bac0b4-2322-4c93-b6a7-d3a16da73848",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "9f111b1f-d146-4893-a567-43dafa100620",
+                            ConcurrencyStamp = "c0b8c12a-cbb9-4816-b0c8-c09ecfc8ac71",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -154,7 +154,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fb866109-0cb7-4d3b-8f5a-dbafb2640153",
+                            ConcurrencyStamp = "859c5771-0f2c-4133-b4d1-6598420019c0",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             Gender = 0,
@@ -162,12 +162,31 @@ namespace Bookstore.Migrations
                             Name = "Super",
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPaJdmhbv1gFnBzqyRsQTfOKrSRVnEcduzr1p3O8sHkZIDzwUU0DzezNncblQAQK5g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDZvVyoyyLtr1k+KBo+VwpkowlQhXCDngHTdY+wLESnjVSJSmLz4hxSGkndMc8FDRg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3fddae33-8b57-49eb-b229-fc23408b35d4",
+                            SecurityStamp = "dc643701-f60e-41fd-94e8-29ebc5bd5e9e",
                             Surname = "Admin",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "df3c3406-442b-4049-a168-9fe4c758c235",
+                            Email = "sercandastan@hotmail.com",
+                            EmailConfirmed = false,
+                            Gender = 0,
+                            LockoutEnabled = false,
+                            Name = "Sercan",
+                            NormalizedEmail = "SERCANDASTAN@HOTMAIL.COM",
+                            NormalizedUserName = "SERCANDASTAN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPKctuV3HV+94EcFFWAQfKqngXhFUj+j1LbZCl5QUhyVCU/Vejp/LthAoP5dHc3Y0g==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "b9b86860-2c1a-4892-83c7-1efa1ccfb61a",
+                            Surname = "Daştan",
+                            TwoFactorEnabled = false,
+                            UserName = "sercandastan"
                         });
                 });
 
@@ -333,7 +352,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 1,
                             CategoryId = 8,
-                            CoverImage = "",
+                            CoverImage = "/BookCoverImages/gyk.jpg",
                             CoverText = "Hayatın olasılıkları üzerine etkileyici bir hikaye.",
                             EditionNumber = 1,
                             Price = 120m,
@@ -346,7 +365,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 2,
                             CategoryId = 2,
-                            CoverImage = "",
+                            CoverImage = "/BookCoverImages/1984.jpg",
                             CoverText = "Distopik bir geleceğin sert tasviri.",
                             EditionNumber = 5,
                             Price = 90m,
@@ -359,7 +378,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 3,
                             CategoryId = 6,
-                            CoverImage = "",
+                            CoverImage = "/BookCoverImages/avg.jpg",
                             CoverText = "Zarafet ve sınıf çatışmalarının romanı.",
                             EditionNumber = 3,
                             Price = 85m,
@@ -372,7 +391,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 4,
                             CategoryId = 3,
-                            CoverImage = "",
+                            CoverImage = "/BookCoverImages/O.jpg",
                             CoverText = "Korku dolu bir kasaba ve geçmişin karanlığı.",
                             EditionNumber = 2,
                             Price = 110m,
@@ -385,7 +404,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 5,
                             CategoryId = 7,
-                            CoverImage = "",
+                            CoverImage = "/BookCoverImages/hpvft.jpg",
                             CoverText = "Büyücü bir çocuğun destansı yolculuğu.",
                             EditionNumber = 1,
                             Price = 100m,
@@ -398,7 +417,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 6,
                             CategoryId = 5,
-                            CoverImage = "",
+                            CoverImage = "/BookCoverImages/okz.jpg",
                             CoverText = "Gerilim ve gizemin en iyi örneklerinden.",
                             EditionNumber = 4,
                             Price = 95m,
@@ -411,7 +430,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 7,
                             CategoryId = 9,
-                            CoverImage = "",
+                            CoverImage = "/BookCoverImages/svb.jpg",
                             CoverText = "Rusya'nın tarihsel ve kültürel panoraması.",
                             EditionNumber = 2,
                             Price = 130m,
@@ -424,7 +443,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 8,
                             CategoryId = 1,
-                            CoverImage = "",
+                            CoverImage = "/BookCoverImages/yavd.jpg",
                             CoverText = "Direnişin ve yalnızlığın metaforu.",
                             EditionNumber = 2,
                             Price = 80m,
@@ -437,7 +456,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 9,
                             CategoryId = 2,
-                            CoverImage = "",
+                            CoverImage = "/BookCoverImages/1q84.jpg",
                             CoverText = "Paralel evrende geçen gizemli bir yolculuk.",
                             EditionNumber = 1,
                             Price = 125m,
@@ -450,7 +469,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 10,
                             CategoryId = 10,
-                            CoverImage = "",
+                            CoverImage = "/BookCoverImages/yy.jpg",
                             CoverText = "Bir ailenin kuşaklar arası büyülü hikayesi.",
                             EditionNumber = 3,
                             Price = 115m,
@@ -833,6 +852,11 @@ namespace Bookstore.Migrations
                         {
                             UserId = 1,
                             RoleId = 1
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            RoleId = 2
                         });
                 });
 

@@ -11,7 +11,7 @@ namespace Bookstore.Models
         public int PublicationYear { get; set; } //İlk yayınlandığı yıl
         public int EditionNumber { get; set; } //Baskı sayısı
         public string CoverText { get; set; } //Arka kapağındaki yazı
-        public string CoverImage { get; set; } //Kapak görselinin yolu/URLSi
+        public string? CoverImage { get; set; } //Kapak görselinin yolu/URLSi
 
         //IEntity
         public DateTime? CreatedAt { get; set; }
