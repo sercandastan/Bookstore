@@ -62,7 +62,6 @@ namespace Bookstore.Areas.AdminPanel.Controllers
             return View(vm);
         }
         [HttpPost]
-        [HttpPost]
         public async Task<IActionResult> Create(CreateBook_VM vm)
         {
             if (!ModelState.IsValid)

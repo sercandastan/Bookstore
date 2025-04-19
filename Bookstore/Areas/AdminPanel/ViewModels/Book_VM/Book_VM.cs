@@ -14,7 +14,7 @@ namespace Bookstore.Areas.AdminPanel.ViewModels.Book_VM
 
         [Required(ErrorMessage = "Fiyat zorunludur.")]
         [Range(0.01, 9999.99, ErrorMessage = "Fiyat geçerli bir değer olmalıdır.")]
-        public bool Price { get; set; }
+        public double Price { get; set; }
 
         [Required(ErrorMessage = "Yayın yılı zorunludur.")]
         public int PublicationYear { get; set; }
