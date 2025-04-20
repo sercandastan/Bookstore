@@ -1,0 +1,23 @@
+﻿/* user.css - User Panel özel stilleri */
+.navbar-user {
+    background-color: var(--secondary) !important;
+
+
+}
+
+    .navbar-user .navbar-brand img {
+        height: 50px;
+        width: auto;
+        overflow: hidden;
+        transform: scale(3);
+        transform-origin: left center;
+    }
+
+    .navbar-user .nav-link {
+        color: var(--primary) !important;
+        font-weight: 400;
+    }
+
+        .navbar-user .nav-link:hover {
+            color: var(--accent) !important;
+        }

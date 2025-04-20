@@ -7,50 +7,57 @@
 }
 
 <div class="container-fluid vh-100 d-flex p-0">
-    <!-- Sol Görsel -->
-    <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center bg-dark text-white p-5" style="background: url('/images/bookstore-banner.jpg') center/cover no-repeat;">
+    <!-- Sol Kısım: Görsel, İkon ve Motto -->
+    <div class="col-12 col-md-6 d-none d-md-flex auth-left position-relative">
+        <!-- Opsiyonel arka plan resmi eklemek için auth-left CSS güncellenebilir -->
         <div class="text-center">
-            <a asp-area="" asp-controller="Home" asp-action="Index" class="text-white text-decoration-none">
-                <h1 class="display-4 fw-bold">📚 Bookstore</h1>
-            </a>
-            <p class="lead">Kitapların dünyasına hoş geldiniz.</p>
+            <div class="auth-logo mb-4">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/sslogoo.png" alt="SatırSatır.com Logo" class="img-fluid" /></a>
+                
+            </div>
+            <h1 class="auth-motto">
+                Her <span class="highlight">satır</span> yeni bir dünyaya açılan kapıdır
+            </h1>
+
         </div>
     </div>
 
-    <!-- Sağ Giriş Formu -->
-    <div class="col-md-6 d-flex align-items-center justify-content-center bg-light p-4">
-        <div class="w-100" style="max-width: 400px;">
-            <h3 class="fw-bold text-center mb-4">Giriş Yap</h3>
-
-            <form asp-controller="Login" asp-action="Login" method="post">
-                <div class="mb-3">
-                    <label asp-for="EmailOrUserName" class="form-label">E-posta veya Kullanıcı Adı</label>
-                    <input asp-for="EmailOrUserName" class="form-control" placeholder="örnek: admin veya admin@admin.com" value="sercandastan" />
+    <!-- Sağ Kısım: Modern Giriş Formu -->
+    <div class="col-12 col-md-6 d-flex align-items-center justify-content-center bg-light">
+        <div class="auth-card w-100" style="max-width: 400px;">
+            <h3 class="fw-bold text-center mb-4 text-primary">Giriş Yap</h3>
+            <form asp-area="" asp-controller="Login" asp-action="Login" method="post" novalidate>
+                <div class="form-floating mb-3">
+                    <input asp-for="EmailOrUserName" type="text" class="form-control" id="floatingInput" placeholder="username veya username@mail.com" />
+                    <label for="floatingInput">E-posta veya Kullanıcı Adı</label>
                     <span asp-validation-for="EmailOrUserName" class="text-danger small"></span>
                 </div>
-
-                <div class="mb-3">
-                    <label asp-for="Password" class="form-label">Şifre</label>
-                    <input asp-for="Password" type="password" class="form-control" placeholder="Şifrenizi girin" value="Sercan_123" />
+                <div class="form-floating mb-3">
+                    <input asp-for="Password" type="password" class="form-control" id="floatingPassword" placeholder="Şifreniz" />
+                    <label for="floatingPassword">Şifre</label>
                     <span asp-validation-for="Password" class="text-danger small"></span>
                 </div>
-
-                <div class="d-grid mb-3">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="bi bi-box-arrow-in-right me-1"></i> Giriş Yap
+                <div class="d-flex justify-content-between align-items-center mb-4">
+  
+                    <a asp-action="ForgotPassword" class="small text-secondary">Şifremi Unuttum?</a>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-accent btn-lg">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Giriş Yap
                     </button>
                 </div>
             </form>
+            <div class="text-center mt-4">
 
-            <div class="text-center">
-                <a asp-action="ForgotPassword" class="text-decoration-none small">Şifremi Unuttum</a>
+                <span>Henüz hesabınız yok mu? </span><a asp-action="Register" class="text-accent fw-semibold">Satırlan...</a>
+                
             </div>
-
-            <div asp-validation-summary="ModelOnly" class="text-danger mt-3 small text-center"></div>
         </div>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

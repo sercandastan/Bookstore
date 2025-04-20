@@ -1,0 +1,130 @@
+﻿/* auth.css - Auth sayfaları için modern stiller */
+
+/* Temel Renk Değişkenleri Referansı */
+/* Bu dosyada renk değişkenleri root içinde tanımlı olmalıdır */
+:root {
+    --primary: #3D405B; /* Lacivertimsi koyu gri */
+    --secondary: #F2CC8F; /* Açık sarı-bej */
+    --accent: #81B29A; /* Soft yeşil */
+    --warning: #cb521b; /* Turuncu-kırmızı */
+    --background: #F4F1DE; /* Krem */
+    --light-text: #FFFFFF; /* Beyaz */
+    --accent: #4CAF50; /* Soft yeşil */
+}
+/* Kayıt bağlantısı rengi */
+.text-accent {
+    color: var(--warning) !important; /* Markayla uyumlu accent rengi */
+}
+
+    .text-accent:hover {
+        color: var(--accent) !important; /* Hover’da warning rengi */
+    }
+
+/* Mottomuzdaki 'satır' kelimesi için vurgulu renk */
+.auth-motto .highlight {
+    color: var(--warning); /* Accent rengini uygular */
+}
+
+/* Sol Kısım: Modern Gradient Arkaplan ve Renkler */
+.auth-left {
+    /* Gradient renkleri secondary'den accent'e değiştirdik */
+    background: linear-gradient(100deg, var(--secondary) 45%, var(--accent) 100%);
+    color: var(--light-text); /* Yazılar beyaz */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 100vh;
+    outline: 1px solid var(--background);
+
+}
+
+    .auth-left .auth-logo img {
+        max-height: 550px; /* Logo yüksekliği */
+        width: auto; /* En-boy orantısı */
+        display: block;
+        margin-bottom: 1.5rem;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)); /* Hafif gölge */
+    }
+
+    .auth-left .auth-motto {
+        margin-top: 1.5rem; /* Logonun altında boşluk */
+        font-size: 1.75rem; /* Motto yazı boyutu */
+        color: var(--light-text); /* Beyaz metin */
+        text-align: center;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+/* Sağ Kısım: Kitap Form Kartı (Açık Kitap Efekti) */
+.auth-card {
+    position: relative; /* Pseudo-element'lerle katmanlama için */
+    background: transparent; /* Kart arka planı transparent */
+    padding: 2rem 4rem; /* Yatay iç boşluk sayfa genişliği için */
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    /* Ortadaki sayfa kıvrımını simgeleyen ince çizgi */
+    background-image: linear-gradient( to right, transparent 49.5%, rgba(0,0,0,0.05) 50%, transparent 50.5% );
+}
+
+    .auth-card::before,
+    .auth-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        background: rgba(255,255,255,0.9); /* Kağıt beyazı efekti */
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        z-index: 0;
+    }
+
+    .auth-card::before {
+        left: 0;
+        transform-origin: right center;
+        transform: perspective(600px) rotateY(8deg); /* Sol sayfa hafif çevrilmiş */
+        border-right: none;
+        border-radius: 0.75rem 0 0 0.75rem;
+    }
+
+    .auth-card::after {
+        right: 0;
+        transform-origin: left center;
+        transform: perspective(600px) rotateY(-8deg); /* Sağ sayfa hafif çevrilmiş */
+        border-left: none;
+        border-radius: 0 0.75rem 0.75rem 0;
+    }
+
+    /* Kart içeriğini ön plana çıkar */
+    .auth-card > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Buton ve Form Elemanları */
+    .auth-card .btn-accent {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        font-weight: 500;
+    }
+
+        .auth-card .btn-accent:hover {
+            background-color: var(--warning);
+            border-color: var(--warning);
+        }
+
+/* Floating Label Inputlar */
+.form-floating .form-control {
+    border-radius: 0.75rem;
+}
+
+.form-floating label {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.form-floating .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(129, 178, 154, 0.4);
+}

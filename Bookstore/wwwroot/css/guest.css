@@ -1,0 +1,151 @@
+﻿/* guest.css - Özel Guest Layout stilleri */
+
+/* Temel Renk Değişkenleri */
+:root {
+    --primary: #3D405B; /* Lacivertimsi koyu gri */
+    --secondary: #F2CC8F; /* Açık sarı-bej */
+    --accent: #81B29A; /* Soft yeşil */
+    --warning: #E07A5F; /* Turuncu-kırmızı */
+    --background: #F4F1DE; /* Krem */
+    --light-text: #FFFFFF; /* Beyaz */
+    --accent: #4CAF50; /* Soft yeşil */
+}
+
+/* Genel Sayfa Ayarları */
+body {
+    background-color: var(--background);
+    color: var(--primary);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Guest Özel Stilleri */
+.navbar-guest {
+    background-color: var(--secondary) !important; /* Açık sarı-bej */
+}
+
+    .navbar-guest .navbar-brand,
+    .navbar-guest .nav-link {
+        color: var(--primary) !important; /* Koyu kontrast için */
+    }
+
+        .navbar-guest .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+    .navbar-guest .btn-outline-light {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+        .navbar-guest .btn-outline-light:hover {
+            background-color: var(--primary);
+            color: var(--light-text);
+        }
+
+
+    .navbar-guest .navbar-brand img {
+        height: 50px;
+        width: auto;
+        overflow: hidden;
+        transform: scale(3);
+        transform-origin: left center;
+    }
+
+/* Kart (Book Card) Stilleri */
+.book-card {
+    background-color: var(--light-text);
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+    .book-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .book-card .card-title {
+        color: var(--primary);
+    }
+
+    .book-card .card-text {
+        color: #555;
+    }
+
+    .book-card .btn {
+        background-color: var(--accent);
+        color: var(--light-text);
+        border-radius: 2rem;
+    }
+
+        .book-card .btn:hover {
+            background-color: var(--warning);
+            color: var(--light-text);
+        }
+
+/* Sepet Butonu (Dairesel, Şeffaf) */
+.cart-button {
+    background-color: transparent !important; /* Arka planı şeffaf yap */
+    border: none; /* Kenarlık yok */
+    color: var(--primary); /* İkon rengi için birincil koyu renk */
+    border-radius: 50%; /* Tam daire formu */
+    padding: 0.5rem; /* Dairesel form için eşit iç boşluk */
+    width: 2.5rem; /* Sabit genişlik ve yükseklik */
+    height: 2.5rem;
+    display: flex; /* İkonu ortalamak için flex */
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+    /* Sepet Butonu Hover (Yeşil) */
+    .cart-button:hover {
+        background-color: var(--accent) !important; /* Soft yeşil arka plan */
+        color: var(--light-text); /* Metin/ikon rengi beyaz */
+    }
+
+
+/* Form Kontrolleri */
+.form-control {
+    border-color: var(--accent);
+    border-radius: 0.25rem;
+}
+
+    .form-control:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 0.2rem rgba(129, 178, 154, 0.25);
+    }
+
+/* Footer */
+.footer {
+    background-color: var(--secondary);
+    color: var(--light-text);
+}
+
+    .footer a {
+        color: var(--light-text);
+    }
+
+        .footer a:hover {
+            color: var(--secondary);
+        }
+
+/* Toast Bildirimleri */
+.toast-container .toast {
+    border-left: 4px solid var(--accent);
+}
+
+.toast-success {
+    background-color: #e6f4ea;
+    border-color: var(--accent);
+}
+
+.toast-error {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+}
+
+.toast-warning {
+    background-color: #fff3cd;
+    border-color: var(--warning);
+}

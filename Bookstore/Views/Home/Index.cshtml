@@ -4,43 +4,37 @@
     ViewData["Title"] = "Kitaplar";
 }
 
-<div class="container mt-5">
-    <!-- Başlık ve Giriş Butonu -->
-    <div class="d-flex justify-content-between align-items-center mb-5">
-        <h2 class="fw-bold text-dark">
-            <i class="bi bi-book-half me-2 text-primary"></i> Tüm Kitaplar
-        </h2>
-    </div>
-
+<div class="container mt-4">
     <!-- Kitap Kartları -->
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4">
         @foreach (var item in Model)
         {
             <div class="col">
-                <div class="card h-100 shadow border-0 book-card position-relative">
-                    <img src="@(string.IsNullOrEmpty(item.CoverImage) ? "/BookCoverImages/defaultBookCover.png" : item.CoverImage)"
-                         class="card-img-top rounded-top"
+                <div class="book-card">
+                    <!-- Kapak Görseli -->
+                    <img src="@(string.IsNullOrEmpty(item.CoverImage)
+                        ? "/BookCoverImages/defaultBookCover.png"
+                        : item.CoverImage)"
                          alt="@item.Title Kapak Görseli"
-                         style="object-fit: cover; height: 250px;" />
+                         class="book-cover" />
 
-                    <!-- Sepet Butonu -->
-                    <button class="btn btn-outline-success cart-button position-absolute top-0 end-0 m-2 rounded-circle"
-                            title="Sepete Ekle">
+                    <!-- Sepete Ekle Butonu -->
+                    <button class="cart-button" title="Sepete Ekle">
                         <i class="bi bi-cart-plus"></i>
                     </button>
 
                     <!-- Kitap Bilgileri -->
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-dark text-truncate" title="@item.Title">@item.Title</h5>
 
-                        <div class="card-text text-muted small">
-                            <p class="mb-1"><strong>Fiyat:</strong> ₺@item.Price.ToString("N2")</p>
-                            <p class="mb-1"><strong>Yıl:</strong> @item.PublicationYear | <strong>Baskı:</strong> @item.EditionNumber</p>
-                            <p class="mb-1"><strong>Kategori:</strong> @(string.IsNullOrEmpty(item.CategoryName) ? "Yok" : item.CategoryName)</p>
-                            <p class="mb-1"><strong>Yayınevi:</strong> @(string.IsNullOrEmpty(item.PublisherName) ? "Yok" : item.PublisherName)</p>
-                            <p class="mb-1"><strong>Yazar(lar):</strong> @(item.AuthorNames?.Any() == true ? string.Join(", ", item.AuthorNames) : "Yazar bilgisi yok")</p>
-                            <p class="mb-0"><strong>Açıklama:</strong> @item.CoverText</p>
-                        </div>
+                    <div class="book-card-body">
+                        <h5 class="book-title">@item.Title</h5>
+                        <ul class="book-meta list-unstyled small text-muted mb-3">
+                            <li><strong>Fiyat:</strong> <span class="text-success fw-bold">₺@item.Price.ToString("N2")</span></li>
+                            <li><strong>Yayın:</strong> @item.PublicationYear | Baskı: @item.EditionNumber</li>
+                            <li><strong>Kategori:</strong> @(string.IsNullOrEmpty(item.CategoryName) ? "Yok" : item.CategoryName)</li>
+                            <li><strong>Yayınevi:</strong> @(string.IsNullOrEmpty(item.PublisherName) ? "Yok" : item.PublisherName)</li>
+                            <li><strong>Yazar:</strong> @(item.AuthorNames?.Any() == true ? string.Join(", ", item.AuthorNames) : "Bilinmiyor")</li>
+                        </ul>
+                        <p class="book-description">@item.CoverText?.Substring(0, Math.Min(item.CoverText.Length, 80))...</p>
                     </div>
                 </div>
             </div>
