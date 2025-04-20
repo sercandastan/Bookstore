@@ -20,7 +20,10 @@ namespace Bookstore.Models.ModelConfigurations
                 Gender = Enums.Gender.Male,
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
                 SecurityStamp = Guid.NewGuid().ToString(),
-                EmailConfirmed = false
+                EmailConfirmed = false,
+                
+
+
 
             };
 

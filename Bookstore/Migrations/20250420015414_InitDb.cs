@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Bookstore.Migrations
 {
     /// <inheritdoc />
-    public partial class initDb : Migration
+    public partial class InitDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -322,8 +322,8 @@ namespace Bookstore.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "18bac0b4-2322-4c93-b6a7-d3a16da73848", "Admin", "ADMIN" },
-                    { 2, "c0b8c12a-cbb9-4816-b0c8-c09ecfc8ac71", "User", "USER" }
+                    { 1, "1e45e12d-3247-47f7-88bb-6a8f18df73b1", "Admin", "ADMIN" },
+                    { 2, "cd15ffa4-fb0f-48ec-8151-2e65aad0683b", "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
@@ -331,8 +331,8 @@ namespace Bookstore.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "Gender", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { 1, 0, "859c5771-0f2c-4133-b4d1-6598420019c0", "admin@admin.com", false, 0, false, null, "Super", "ADMIN@ADMIN.COM", "ADMIN", "AQAAAAIAAYagAAAAEDZvVyoyyLtr1k+KBo+VwpkowlQhXCDngHTdY+wLESnjVSJSmLz4hxSGkndMc8FDRg==", null, false, "dc643701-f60e-41fd-94e8-29ebc5bd5e9e", "Admin", false, "Admin" },
-                    { 2, 0, "df3c3406-442b-4049-a168-9fe4c758c235", "sercandastan@hotmail.com", false, 0, false, null, "Sercan", "SERCANDASTAN@HOTMAIL.COM", "SERCANDASTAN", "AQAAAAIAAYagAAAAEPKctuV3HV+94EcFFWAQfKqngXhFUj+j1LbZCl5QUhyVCU/Vejp/LthAoP5dHc3Y0g==", null, false, "b9b86860-2c1a-4892-83c7-1efa1ccfb61a", "Daştan", false, "sercandastan" }
+                    { 1, 0, "3367000c-e282-471c-a01d-256fdafcc155", "admin@admin.com", false, 0, false, null, "Super", "ADMIN@ADMIN.COM", "ADMIN", "AQAAAAIAAYagAAAAEGcFxZ2aluQvRBT0WkT4u0gXZBqTxYlATu+AnQXmQBvY2bi9JGJzUKewqf2vsfmDbA==", null, false, "09b70f20-1b87-47fa-b617-b48989e8c4d2", "Admin", false, "Admin" },
+                    { 2, 0, "b2fb76d9-60c6-4e5d-b3ef-b7736789f689", "sercandastan@hotmail.com", false, 0, false, null, "Sercan", "SERCANDASTAN@HOTMAIL.COM", "SERCANDASTAN", "AQAAAAIAAYagAAAAEKisYljlzbeeh7M+x/8J0KFxxjxSu6scaoQ2mCiaMX2jVEbYdKH6mAEmZuZW8dRddQ==", null, false, "e9e259e7-6028-47e9-9adf-ab33e670175c", "Daştan", false, "sercandastan" }
                 });
 
             migrationBuilder.InsertData(
@@ -340,16 +340,26 @@ namespace Bookstore.Migrations
                 columns: new[] { "Id", "BirthYear", "CreatedAt", "DeletedAt", "FullName", "Status", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, (short)1990, null, null, "Matt Haig", null, null },
-                    { 2, (short)1903, null, null, "George Orwell", null, null },
-                    { 3, (short)1775, null, null, "Jane Austen", null, null },
-                    { 4, (short)1947, null, null, "Stephen King", null, null },
-                    { 5, (short)1965, null, null, "J.K. Rowling", null, null },
-                    { 6, (short)1890, null, null, "Agatha Christie", null, null },
-                    { 7, (short)1828, null, null, "Leo Tolstoy", null, null },
-                    { 8, (short)1899, null, null, "Ernest Hemingway", null, null },
-                    { 9, (short)1949, null, null, "Haruki Murakami", null, null },
-                    { 10, (short)1927, null, null, "Gabriel Garcia Marquez", null, null }
+                    { 1, (short)1990, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(691), null, "Matt Haig", 0, null },
+                    { 2, (short)1903, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(708), null, "George Orwell", 0, null },
+                    { 3, (short)1775, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(710), null, "Jane Austen", 0, null },
+                    { 4, (short)1947, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(711), null, "Stephen King", 0, null },
+                    { 5, (short)1965, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(712), null, "J.K. Rowling", 0, null },
+                    { 6, (short)1890, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(713), null, "Agatha Christie", 0, null },
+                    { 7, (short)1828, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(714), null, "Leo Tolstoy", 0, null },
+                    { 8, (short)1899, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(715), null, "Ernest Hemingway", 0, null },
+                    { 9, (short)1949, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(716), null, "Haruki Murakami", 0, null },
+                    { 10, (short)1927, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(717), null, "Gabriel Garcia Marquez", 0, null },
+                    { 11, (short)1952, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(719), null, "Orhan Pamuk", 0, null },
+                    { 12, (short)1971, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(720), null, "Elif Şafak", 0, null },
+                    { 13, (short)1821, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(721), null, "Fyodor Dostoevsky", 0, null },
+                    { 14, (short)1871, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(722), null, "Marcel Proust", 0, null },
+                    { 15, (short)1882, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(723), null, "Virginia Woolf", 0, null },
+                    { 16, (short)1877, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(724), null, "Hermann Hesse", 0, null },
+                    { 17, (short)1835, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(725), null, "Mark Twain", 0, null },
+                    { 18, (short)1883, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(726), null, "Franz Kafka", 0, null },
+                    { 19, (short)1947, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(727), null, "Paulo Coelho", 0, null },
+                    { 20, (short)1964, new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(810), null, "Dan Brown", 0, null }
                 });
 
             migrationBuilder.InsertData(
@@ -357,16 +367,26 @@ namespace Bookstore.Migrations
                 columns: new[] { "Id", "CategoryName", "CreatedAt", "DeletedAt", "Status", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, "Roman", null, null, null, null },
-                    { 2, "Bilim Kurgu", null, null, null, null },
-                    { 3, "Korku", null, null, null, null },
-                    { 4, "Felsefe", null, null, null, null },
-                    { 5, "Polisiye", null, null, null, null },
-                    { 6, "Klasik", null, null, null, null },
-                    { 7, "Fantastik", null, null, null, null },
-                    { 8, "Modern Edebiyat", null, null, null, null },
-                    { 9, "Tarih", null, null, null, null },
-                    { 10, "Latin Amerika Edebiyatı", null, null, null, null }
+                    { 1, "Roman", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(640), null, 0, null },
+                    { 2, "Bilim Kurgu", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(646), null, 0, null },
+                    { 3, "Korku", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(647), null, 0, null },
+                    { 4, "Felsefe", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(648), null, 0, null },
+                    { 5, "Polisiye", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(649), null, 0, null },
+                    { 6, "Klasik", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(650), null, 0, null },
+                    { 7, "Fantastik", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(650), null, 0, null },
+                    { 8, "Modern Edebiyat", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(651), null, 0, null },
+                    { 9, "Tarih", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(652), null, 0, null },
+                    { 10, "Latin Amerika Edebiyatı", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(653), null, 0, null },
+                    { 11, "Çocuk", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(654), null, 0, null },
+                    { 12, "Psikoloji", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(655), null, 0, null },
+                    { 13, "Kişisel Gelişim", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(656), null, 0, null },
+                    { 14, "Biyografi", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(657), null, 0, null },
+                    { 15, "Gezi", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(658), null, 0, null },
+                    { 16, "Sağlık", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(659), null, 0, null },
+                    { 17, "Ekonomi", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(660), null, 0, null },
+                    { 18, "Sanat", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(660), null, 0, null },
+                    { 19, "Şiir", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(661), null, 0, null },
+                    { 20, "Çağdaş Dünya Edebiyatı", new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(662), null, 0, null }
                 });
 
             migrationBuilder.InsertData(
@@ -374,16 +394,26 @@ namespace Bookstore.Migrations
                 columns: new[] { "Id", "CreatedAt", "DeletedAt", "PublisherName", "Status", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, null, null, "Pegasus Yayınları", null, null },
-                    { 2, null, null, "Can Yayınları", null, null },
-                    { 3, null, null, "İş Bankası Kültür Yayınları", null, null },
-                    { 4, null, null, "Altın Kitaplar", null, null },
-                    { 5, null, null, "YKY", null, null },
-                    { 6, null, null, "Epsilon Yayınları", null, null },
-                    { 7, null, null, "Remzi Kitabevi", null, null },
-                    { 8, null, null, "Everest Yayınları", null, null },
-                    { 9, null, null, "Doğan Kitap", null, null },
-                    { 10, null, null, "Kafka Kitap", null, null }
+                    { 1, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1501), null, "Pegasus Yayınları", 0, null },
+                    { 2, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1503), null, "Can Yayınları", 0, null },
+                    { 3, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1504), null, "İş Bankası Kültür Yayınları", 0, null },
+                    { 4, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1505), null, "Altın Kitaplar", 0, null },
+                    { 5, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1506), null, "YKY", 0, null },
+                    { 6, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1507), null, "Epsilon Yayınları", 0, null },
+                    { 7, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1508), null, "Remzi Kitabevi", 0, null },
+                    { 8, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1509), null, "Everest Yayınları", 0, null },
+                    { 9, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1510), null, "Doğan Kitap", 0, null },
+                    { 10, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1511), null, "Kafka Kitap", 0, null },
+                    { 11, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1512), null, "Metis Yayınları", 0, null },
+                    { 12, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1513), null, "İthaki Yayınları", 0, null },
+                    { 13, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1514), null, "Doğan Egmont", 0, null },
+                    { 14, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1515), null, "Tudem Yayınları", 0, null },
+                    { 15, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1516), null, "Türkiye İş Bankası Kültür Yayınları", 0, null },
+                    { 16, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1516), null, "Omega Yayınları", 0, null },
+                    { 17, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1517), null, "Kalem Kitap", 0, null },
+                    { 18, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1518), null, "Beyaz Balina Yayınları", 0, null },
+                    { 19, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1519), null, "Profil Yayıncılık", 0, null },
+                    { 20, new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1520), null, "Dergah Yayınları", 0, null }
                 });
 
             migrationBuilder.InsertData(
@@ -400,16 +430,26 @@ namespace Bookstore.Migrations
                 columns: new[] { "Id", "CategoryId", "CoverImage", "CoverText", "CreatedAt", "DeletedAt", "EditionNumber", "Price", "PublicationYear", "PublisherId", "Status", "Title", "UpdatedAt", "UserId" },
                 values: new object[,]
                 {
-                    { 1, 8, "/BookCoverImages/gyk.jpg", "Hayatın olasılıkları üzerine etkileyici bir hikaye.", null, null, 1, 120m, (short)2020, 1, null, "Gece Yarısı Kütüphanesi", null, 1 },
-                    { 2, 2, "/BookCoverImages/1984.jpg", "Distopik bir geleceğin sert tasviri.", null, null, 5, 90m, (short)1949, 2, null, "1984", null, 1 },
-                    { 3, 6, "/BookCoverImages/avg.jpg", "Zarafet ve sınıf çatışmalarının romanı.", null, null, 3, 85m, (short)1813, 3, null, "Aşk ve Gurur", null, 1 },
-                    { 4, 3, "/BookCoverImages/O.jpg", "Korku dolu bir kasaba ve geçmişin karanlığı.", null, null, 2, 110m, (short)1986, 4, null, "O", null, 1 },
-                    { 5, 7, "/BookCoverImages/hpvft.jpg", "Büyücü bir çocuğun destansı yolculuğu.", null, null, 1, 100m, (short)1997, 5, null, "Harry Potter ve Felsefe Taşı", null, 1 },
-                    { 6, 5, "/BookCoverImages/okz.jpg", "Gerilim ve gizemin en iyi örneklerinden.", null, null, 4, 95m, (short)1939, 6, null, "On Küçük Zenci", null, 1 },
-                    { 7, 9, "/BookCoverImages/svb.jpg", "Rusya'nın tarihsel ve kültürel panoraması.", null, null, 2, 130m, (short)1869, 7, null, "Savaş ve Barış", null, 1 },
-                    { 8, 1, "/BookCoverImages/yavd.jpg", "Direnişin ve yalnızlığın metaforu.", null, null, 2, 80m, (short)1952, 8, null, "Yaşlı Adam ve Deniz", null, 1 },
-                    { 9, 2, "/BookCoverImages/1q84.jpg", "Paralel evrende geçen gizemli bir yolculuk.", null, null, 1, 125m, (short)2009, 9, null, "1Q84", null, 1 },
-                    { 10, 10, "/BookCoverImages/yy.jpg", "Bir ailenin kuşaklar arası büyülü hikayesi.", null, null, 3, 115m, (short)1967, 10, null, "Yüzyıllık Yalnızlık", null, 1 }
+                    { 1, 8, "/BookCoverImages/gyk.jpg", "Hayatın olasılıkları üzerine etkileyici bir hikaye.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2105), null, 1, 120m, (short)2020, 1, 0, "Gece Yarısı Kütüphanesi", null, 1 },
+                    { 2, 2, "/BookCoverImages/1984.jpg", "Distopik bir geleceğin sert tasviri.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2109), null, 5, 90m, (short)1949, 2, 0, "1984", null, 1 },
+                    { 3, 6, "/BookCoverImages/avg.jpg", "Zarafet ve sınıf çatışmalarının romanı.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2110), null, 3, 85m, (short)1813, 3, 0, "Aşk ve Gurur", null, 1 },
+                    { 4, 3, "/BookCoverImages/O.jpg", "Korku dolu bir kasaba ve geçmişin karanlığı.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2112), null, 2, 110m, (short)1986, 4, 0, "O", null, 1 },
+                    { 5, 7, "/BookCoverImages/hpvft.jpg", "Büyücü bir çocuğun destansı yolculuğu.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2113), null, 1, 100m, (short)1997, 5, 0, "Harry Potter ve Felsefe Taşı", null, 1 },
+                    { 6, 5, "/BookCoverImages/okz.jpg", "Gerilim ve gizemin en iyi örneklerinden.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2115), null, 4, 95m, (short)1939, 6, 0, "On Küçük Zenci", null, 1 },
+                    { 7, 9, "/BookCoverImages/svb.jpg", "Rusya'nın tarihsel ve kültürel panoraması.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2116), null, 2, 130m, (short)1869, 7, 0, "Savaş ve Barış", null, 1 },
+                    { 8, 1, "/BookCoverImages/yavd.jpg", "Direnişin ve yalnızlığın metaforu.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2118), null, 2, 80m, (short)1952, 8, 0, "Yaşlı Adam ve Deniz", null, 1 },
+                    { 9, 2, "/BookCoverImages/1q84.jpg", "Paralel evrende geçen gizemli bir yolculuk.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2119), null, 1, 125m, (short)2009, 9, 0, "1Q84", null, 1 },
+                    { 10, 10, "/BookCoverImages/yy.jpg", "Bir ailenin kuşaklar arası büyülü hikayesi.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2121), null, 3, 115m, (short)1967, 10, 0, "Yüzyıllık Yalnızlık", null, 1 },
+                    { 11, 3, "/BookCoverImages/korluk.jpg", "Toplumsal çöküşün karanlık portresi.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2122), null, 2, 105m, (short)1995, 11, 0, "Körlük", null, 1 },
+                    { 12, 10, "/BookCoverImages/masumiyet.jpg", "Takıntı ile aşkın sınırlarında bir hikaye.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2124), null, 1, 95m, (short)2008, 12, 0, "Masumiyet Müzesi", null, 1 },
+                    { 13, 6, "/BookCoverImages/scuzceza.jpg", "Vicdan azabının psikolojik çözümlemesi.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2125), null, 3, 110m, (short)1866, 13, 0, "Suç ve Ceza", null, 1 },
+                    { 14, 8, "/BookCoverImages/kayipzaman.jpg", "Belleğin ince notaları.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2127), null, 1, 150m, (short)1913, 14, 0, "Kayıp Zamanın İzinde", null, 1 },
+                    { 15, 4, "/BookCoverImages/mrsdalloway.jpg", "Bir günün özenle işlenmiş portresi.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2128), null, 2, 90m, (short)1925, 15, 0, "Mrs Dalloway", null, 1 },
+                    { 16, 4, "/BookCoverImages/siddhartha.jpg", "Ruhani yolculuğa dair bir başyapıt.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2130), null, 1, 85m, (short)1922, 16, 0, "Siddhartha", null, 1 },
+                    { 17, 1, "/BookCoverImages/tomsawyer.jpg", "Çocukluğun neşeli dünyası.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2131), null, 5, 75m, (short)1876, 17, 0, "Tom Sawyer’ın Maceraları", null, 1 },
+                    { 18, 3, "/BookCoverImages/donusum.jpg", "Varoluşsal kaygının sembolik öyküsü.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2133), null, 1, 80m, (short)1915, 18, 0, "Dönüşüm", null, 1 },
+                    { 19, 7, "/BookCoverImages/simyaci.jpg", "Rüyanın peşinde bir yolculuk.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2134), null, 3, 95m, (short)1988, 19, 0, "Simyacı", null, 1 },
+                    { 20, 2, "/BookCoverImages/davinci.jpg", "Tarih, sanat ve gizemin kesiştiği nokta.", new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2135), null, 2, 120m, (short)2003, 20, 0, "Da Vinci Şifresi", null, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -426,7 +466,17 @@ namespace Bookstore.Migrations
                     { 7, 7, null, null, null, null },
                     { 8, 8, null, null, null, null },
                     { 9, 9, null, null, null, null },
-                    { 10, 10, null, null, null, null }
+                    { 10, 10, null, null, null, null },
+                    { 11, 11, null, null, null, null },
+                    { 12, 12, null, null, null, null },
+                    { 13, 13, null, null, null, null },
+                    { 14, 14, null, null, null, null },
+                    { 15, 15, null, null, null, null },
+                    { 16, 16, null, null, null, null },
+                    { 17, 17, null, null, null, null },
+                    { 18, 18, null, null, null, null },
+                    { 19, 19, null, null, null, null },
+                    { 20, 20, null, null, null, null }
                 });
 
             migrationBuilder.CreateIndex(

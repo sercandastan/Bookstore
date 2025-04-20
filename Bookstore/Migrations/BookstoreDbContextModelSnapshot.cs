@@ -55,14 +55,14 @@ namespace Bookstore.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "18bac0b4-2322-4c93-b6a7-d3a16da73848",
+                            ConcurrencyStamp = "1e45e12d-3247-47f7-88bb-6a8f18df73b1",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "c0b8c12a-cbb9-4816-b0c8-c09ecfc8ac71",
+                            ConcurrencyStamp = "cd15ffa4-fb0f-48ec-8151-2e65aad0683b",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -151,7 +151,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "859c5771-0f2c-4133-b4d1-6598420019c0",
+                            ConcurrencyStamp = "3367000c-e282-471c-a01d-256fdafcc155",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             Gender = 0,
@@ -159,9 +159,9 @@ namespace Bookstore.Migrations
                             Name = "Super",
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDZvVyoyyLtr1k+KBo+VwpkowlQhXCDngHTdY+wLESnjVSJSmLz4hxSGkndMc8FDRg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGcFxZ2aluQvRBT0WkT4u0gXZBqTxYlATu+AnQXmQBvY2bi9JGJzUKewqf2vsfmDbA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "dc643701-f60e-41fd-94e8-29ebc5bd5e9e",
+                            SecurityStamp = "09b70f20-1b87-47fa-b617-b48989e8c4d2",
                             Surname = "Admin",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
@@ -170,7 +170,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "df3c3406-442b-4049-a168-9fe4c758c235",
+                            ConcurrencyStamp = "b2fb76d9-60c6-4e5d-b3ef-b7736789f689",
                             Email = "sercandastan@hotmail.com",
                             EmailConfirmed = false,
                             Gender = 0,
@@ -178,9 +178,9 @@ namespace Bookstore.Migrations
                             Name = "Sercan",
                             NormalizedEmail = "SERCANDASTAN@HOTMAIL.COM",
                             NormalizedUserName = "SERCANDASTAN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPKctuV3HV+94EcFFWAQfKqngXhFUj+j1LbZCl5QUhyVCU/Vejp/LthAoP5dHc3Y0g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKisYljlzbeeh7M+x/8J0KFxxjxSu6scaoQ2mCiaMX2jVEbYdKH6mAEmZuZW8dRddQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b9b86860-2c1a-4892-83c7-1efa1ccfb61a",
+                            SecurityStamp = "e9e259e7-6028-47e9-9adf-ab33e670175c",
                             Surname = "Daştan",
                             TwoFactorEnabled = false,
                             UserName = "sercandastan"
@@ -224,61 +224,161 @@ namespace Bookstore.Migrations
                         {
                             Id = 1,
                             BirthYear = (short)1990,
-                            FullName = "Matt Haig"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(691),
+                            FullName = "Matt Haig",
+                            Status = 0
                         },
                         new
                         {
                             Id = 2,
                             BirthYear = (short)1903,
-                            FullName = "George Orwell"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(708),
+                            FullName = "George Orwell",
+                            Status = 0
                         },
                         new
                         {
                             Id = 3,
                             BirthYear = (short)1775,
-                            FullName = "Jane Austen"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(710),
+                            FullName = "Jane Austen",
+                            Status = 0
                         },
                         new
                         {
                             Id = 4,
                             BirthYear = (short)1947,
-                            FullName = "Stephen King"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(711),
+                            FullName = "Stephen King",
+                            Status = 0
                         },
                         new
                         {
                             Id = 5,
                             BirthYear = (short)1965,
-                            FullName = "J.K. Rowling"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(712),
+                            FullName = "J.K. Rowling",
+                            Status = 0
                         },
                         new
                         {
                             Id = 6,
                             BirthYear = (short)1890,
-                            FullName = "Agatha Christie"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(713),
+                            FullName = "Agatha Christie",
+                            Status = 0
                         },
                         new
                         {
                             Id = 7,
                             BirthYear = (short)1828,
-                            FullName = "Leo Tolstoy"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(714),
+                            FullName = "Leo Tolstoy",
+                            Status = 0
                         },
                         new
                         {
                             Id = 8,
                             BirthYear = (short)1899,
-                            FullName = "Ernest Hemingway"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(715),
+                            FullName = "Ernest Hemingway",
+                            Status = 0
                         },
                         new
                         {
                             Id = 9,
                             BirthYear = (short)1949,
-                            FullName = "Haruki Murakami"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(716),
+                            FullName = "Haruki Murakami",
+                            Status = 0
                         },
                         new
                         {
                             Id = 10,
                             BirthYear = (short)1927,
-                            FullName = "Gabriel Garcia Marquez"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(717),
+                            FullName = "Gabriel Garcia Marquez",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 11,
+                            BirthYear = (short)1952,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(719),
+                            FullName = "Orhan Pamuk",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 12,
+                            BirthYear = (short)1971,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(720),
+                            FullName = "Elif Şafak",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 13,
+                            BirthYear = (short)1821,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(721),
+                            FullName = "Fyodor Dostoevsky",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 14,
+                            BirthYear = (short)1871,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(722),
+                            FullName = "Marcel Proust",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 15,
+                            BirthYear = (short)1882,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(723),
+                            FullName = "Virginia Woolf",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 16,
+                            BirthYear = (short)1877,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(724),
+                            FullName = "Hermann Hesse",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 17,
+                            BirthYear = (short)1835,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(725),
+                            FullName = "Mark Twain",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 18,
+                            BirthYear = (short)1883,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(726),
+                            FullName = "Franz Kafka",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 19,
+                            BirthYear = (short)1947,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(727),
+                            FullName = "Paulo Coelho",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 20,
+                            BirthYear = (short)1964,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(810),
+                            FullName = "Dan Brown",
+                            Status = 0
                         });
                 });
 
@@ -351,10 +451,12 @@ namespace Bookstore.Migrations
                             CategoryId = 8,
                             CoverImage = "/BookCoverImages/gyk.jpg",
                             CoverText = "Hayatın olasılıkları üzerine etkileyici bir hikaye.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2105),
                             EditionNumber = 1,
                             Price = 120m,
                             PublicationYear = (short)2020,
                             PublisherId = 1,
+                            Status = 0,
                             Title = "Gece Yarısı Kütüphanesi",
                             UserId = 1
                         },
@@ -364,10 +466,12 @@ namespace Bookstore.Migrations
                             CategoryId = 2,
                             CoverImage = "/BookCoverImages/1984.jpg",
                             CoverText = "Distopik bir geleceğin sert tasviri.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2109),
                             EditionNumber = 5,
                             Price = 90m,
                             PublicationYear = (short)1949,
                             PublisherId = 2,
+                            Status = 0,
                             Title = "1984",
                             UserId = 1
                         },
@@ -377,10 +481,12 @@ namespace Bookstore.Migrations
                             CategoryId = 6,
                             CoverImage = "/BookCoverImages/avg.jpg",
                             CoverText = "Zarafet ve sınıf çatışmalarının romanı.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2110),
                             EditionNumber = 3,
                             Price = 85m,
                             PublicationYear = (short)1813,
                             PublisherId = 3,
+                            Status = 0,
                             Title = "Aşk ve Gurur",
                             UserId = 1
                         },
@@ -390,10 +496,12 @@ namespace Bookstore.Migrations
                             CategoryId = 3,
                             CoverImage = "/BookCoverImages/O.jpg",
                             CoverText = "Korku dolu bir kasaba ve geçmişin karanlığı.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2112),
                             EditionNumber = 2,
                             Price = 110m,
                             PublicationYear = (short)1986,
                             PublisherId = 4,
+                            Status = 0,
                             Title = "O",
                             UserId = 1
                         },
@@ -403,10 +511,12 @@ namespace Bookstore.Migrations
                             CategoryId = 7,
                             CoverImage = "/BookCoverImages/hpvft.jpg",
                             CoverText = "Büyücü bir çocuğun destansı yolculuğu.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2113),
                             EditionNumber = 1,
                             Price = 100m,
                             PublicationYear = (short)1997,
                             PublisherId = 5,
+                            Status = 0,
                             Title = "Harry Potter ve Felsefe Taşı",
                             UserId = 1
                         },
@@ -416,10 +526,12 @@ namespace Bookstore.Migrations
                             CategoryId = 5,
                             CoverImage = "/BookCoverImages/okz.jpg",
                             CoverText = "Gerilim ve gizemin en iyi örneklerinden.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2115),
                             EditionNumber = 4,
                             Price = 95m,
                             PublicationYear = (short)1939,
                             PublisherId = 6,
+                            Status = 0,
                             Title = "On Küçük Zenci",
                             UserId = 1
                         },
@@ -429,10 +541,12 @@ namespace Bookstore.Migrations
                             CategoryId = 9,
                             CoverImage = "/BookCoverImages/svb.jpg",
                             CoverText = "Rusya'nın tarihsel ve kültürel panoraması.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2116),
                             EditionNumber = 2,
                             Price = 130m,
                             PublicationYear = (short)1869,
                             PublisherId = 7,
+                            Status = 0,
                             Title = "Savaş ve Barış",
                             UserId = 1
                         },
@@ -442,10 +556,12 @@ namespace Bookstore.Migrations
                             CategoryId = 1,
                             CoverImage = "/BookCoverImages/yavd.jpg",
                             CoverText = "Direnişin ve yalnızlığın metaforu.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2118),
                             EditionNumber = 2,
                             Price = 80m,
                             PublicationYear = (short)1952,
                             PublisherId = 8,
+                            Status = 0,
                             Title = "Yaşlı Adam ve Deniz",
                             UserId = 1
                         },
@@ -455,10 +571,12 @@ namespace Bookstore.Migrations
                             CategoryId = 2,
                             CoverImage = "/BookCoverImages/1q84.jpg",
                             CoverText = "Paralel evrende geçen gizemli bir yolculuk.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2119),
                             EditionNumber = 1,
                             Price = 125m,
                             PublicationYear = (short)2009,
                             PublisherId = 9,
+                            Status = 0,
                             Title = "1Q84",
                             UserId = 1
                         },
@@ -468,11 +586,163 @@ namespace Bookstore.Migrations
                             CategoryId = 10,
                             CoverImage = "/BookCoverImages/yy.jpg",
                             CoverText = "Bir ailenin kuşaklar arası büyülü hikayesi.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2121),
                             EditionNumber = 3,
                             Price = 115m,
                             PublicationYear = (short)1967,
                             PublisherId = 10,
+                            Status = 0,
                             Title = "Yüzyıllık Yalnızlık",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CategoryId = 3,
+                            CoverImage = "/BookCoverImages/korluk.jpg",
+                            CoverText = "Toplumsal çöküşün karanlık portresi.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2122),
+                            EditionNumber = 2,
+                            Price = 105m,
+                            PublicationYear = (short)1995,
+                            PublisherId = 11,
+                            Status = 0,
+                            Title = "Körlük",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CategoryId = 10,
+                            CoverImage = "/BookCoverImages/masumiyet.jpg",
+                            CoverText = "Takıntı ile aşkın sınırlarında bir hikaye.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2124),
+                            EditionNumber = 1,
+                            Price = 95m,
+                            PublicationYear = (short)2008,
+                            PublisherId = 12,
+                            Status = 0,
+                            Title = "Masumiyet Müzesi",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CategoryId = 6,
+                            CoverImage = "/BookCoverImages/scuzceza.jpg",
+                            CoverText = "Vicdan azabının psikolojik çözümlemesi.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2125),
+                            EditionNumber = 3,
+                            Price = 110m,
+                            PublicationYear = (short)1866,
+                            PublisherId = 13,
+                            Status = 0,
+                            Title = "Suç ve Ceza",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CategoryId = 8,
+                            CoverImage = "/BookCoverImages/kayipzaman.jpg",
+                            CoverText = "Belleğin ince notaları.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2127),
+                            EditionNumber = 1,
+                            Price = 150m,
+                            PublicationYear = (short)1913,
+                            PublisherId = 14,
+                            Status = 0,
+                            Title = "Kayıp Zamanın İzinde",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CategoryId = 4,
+                            CoverImage = "/BookCoverImages/mrsdalloway.jpg",
+                            CoverText = "Bir günün özenle işlenmiş portresi.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2128),
+                            EditionNumber = 2,
+                            Price = 90m,
+                            PublicationYear = (short)1925,
+                            PublisherId = 15,
+                            Status = 0,
+                            Title = "Mrs Dalloway",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CategoryId = 4,
+                            CoverImage = "/BookCoverImages/siddhartha.jpg",
+                            CoverText = "Ruhani yolculuğa dair bir başyapıt.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2130),
+                            EditionNumber = 1,
+                            Price = 85m,
+                            PublicationYear = (short)1922,
+                            PublisherId = 16,
+                            Status = 0,
+                            Title = "Siddhartha",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CategoryId = 1,
+                            CoverImage = "/BookCoverImages/tomsawyer.jpg",
+                            CoverText = "Çocukluğun neşeli dünyası.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2131),
+                            EditionNumber = 5,
+                            Price = 75m,
+                            PublicationYear = (short)1876,
+                            PublisherId = 17,
+                            Status = 0,
+                            Title = "Tom Sawyer’ın Maceraları",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CategoryId = 3,
+                            CoverImage = "/BookCoverImages/donusum.jpg",
+                            CoverText = "Varoluşsal kaygının sembolik öyküsü.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2133),
+                            EditionNumber = 1,
+                            Price = 80m,
+                            PublicationYear = (short)1915,
+                            PublisherId = 18,
+                            Status = 0,
+                            Title = "Dönüşüm",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CategoryId = 7,
+                            CoverImage = "/BookCoverImages/simyaci.jpg",
+                            CoverText = "Rüyanın peşinde bir yolculuk.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2134),
+                            EditionNumber = 3,
+                            Price = 95m,
+                            PublicationYear = (short)1988,
+                            PublisherId = 19,
+                            Status = 0,
+                            Title = "Simyacı",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CategoryId = 2,
+                            CoverImage = "/BookCoverImages/davinci.jpg",
+                            CoverText = "Tarih, sanat ve gizemin kesiştiği nokta.",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2135),
+                            EditionNumber = 2,
+                            Price = 120m,
+                            PublicationYear = (short)2003,
+                            PublisherId = 20,
+                            Status = 0,
+                            Title = "Da Vinci Şifresi",
                             UserId = 1
                         });
                 });
@@ -553,6 +823,56 @@ namespace Bookstore.Migrations
                         {
                             AuthorId = 10,
                             BookId = 10
+                        },
+                        new
+                        {
+                            AuthorId = 11,
+                            BookId = 11
+                        },
+                        new
+                        {
+                            AuthorId = 12,
+                            BookId = 12
+                        },
+                        new
+                        {
+                            AuthorId = 13,
+                            BookId = 13
+                        },
+                        new
+                        {
+                            AuthorId = 14,
+                            BookId = 14
+                        },
+                        new
+                        {
+                            AuthorId = 15,
+                            BookId = 15
+                        },
+                        new
+                        {
+                            AuthorId = 16,
+                            BookId = 16
+                        },
+                        new
+                        {
+                            AuthorId = 17,
+                            BookId = 17
+                        },
+                        new
+                        {
+                            AuthorId = 18,
+                            BookId = 18
+                        },
+                        new
+                        {
+                            AuthorId = 19,
+                            BookId = 19
+                        },
+                        new
+                        {
+                            AuthorId = 20,
+                            BookId = 20
                         });
                 });
 
@@ -630,52 +950,142 @@ namespace Bookstore.Migrations
                         new
                         {
                             Id = 1,
-                            CategoryName = "Roman"
+                            CategoryName = "Roman",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(640),
+                            Status = 0
                         },
                         new
                         {
                             Id = 2,
-                            CategoryName = "Bilim Kurgu"
+                            CategoryName = "Bilim Kurgu",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(646),
+                            Status = 0
                         },
                         new
                         {
                             Id = 3,
-                            CategoryName = "Korku"
+                            CategoryName = "Korku",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(647),
+                            Status = 0
                         },
                         new
                         {
                             Id = 4,
-                            CategoryName = "Felsefe"
+                            CategoryName = "Felsefe",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(648),
+                            Status = 0
                         },
                         new
                         {
                             Id = 5,
-                            CategoryName = "Polisiye"
+                            CategoryName = "Polisiye",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(649),
+                            Status = 0
                         },
                         new
                         {
                             Id = 6,
-                            CategoryName = "Klasik"
+                            CategoryName = "Klasik",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(650),
+                            Status = 0
                         },
                         new
                         {
                             Id = 7,
-                            CategoryName = "Fantastik"
+                            CategoryName = "Fantastik",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(650),
+                            Status = 0
                         },
                         new
                         {
                             Id = 8,
-                            CategoryName = "Modern Edebiyat"
+                            CategoryName = "Modern Edebiyat",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(651),
+                            Status = 0
                         },
                         new
                         {
                             Id = 9,
-                            CategoryName = "Tarih"
+                            CategoryName = "Tarih",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(652),
+                            Status = 0
                         },
                         new
                         {
                             Id = 10,
-                            CategoryName = "Latin Amerika Edebiyatı"
+                            CategoryName = "Latin Amerika Edebiyatı",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(653),
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CategoryName = "Çocuk",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(654),
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CategoryName = "Psikoloji",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(655),
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CategoryName = "Kişisel Gelişim",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(656),
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CategoryName = "Biyografi",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(657),
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CategoryName = "Gezi",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(658),
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CategoryName = "Sağlık",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(659),
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CategoryName = "Ekonomi",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(660),
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CategoryName = "Sanat",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(660),
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CategoryName = "Şiir",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(661),
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CategoryName = "Çağdaş Dünya Edebiyatı",
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(662),
+                            Status = 0
                         });
                 });
 
@@ -712,52 +1122,142 @@ namespace Bookstore.Migrations
                         new
                         {
                             Id = 1,
-                            PublisherName = "Pegasus Yayınları"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1501),
+                            PublisherName = "Pegasus Yayınları",
+                            Status = 0
                         },
                         new
                         {
                             Id = 2,
-                            PublisherName = "Can Yayınları"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1503),
+                            PublisherName = "Can Yayınları",
+                            Status = 0
                         },
                         new
                         {
                             Id = 3,
-                            PublisherName = "İş Bankası Kültür Yayınları"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1504),
+                            PublisherName = "İş Bankası Kültür Yayınları",
+                            Status = 0
                         },
                         new
                         {
                             Id = 4,
-                            PublisherName = "Altın Kitaplar"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1505),
+                            PublisherName = "Altın Kitaplar",
+                            Status = 0
                         },
                         new
                         {
                             Id = 5,
-                            PublisherName = "YKY"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1506),
+                            PublisherName = "YKY",
+                            Status = 0
                         },
                         new
                         {
                             Id = 6,
-                            PublisherName = "Epsilon Yayınları"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1507),
+                            PublisherName = "Epsilon Yayınları",
+                            Status = 0
                         },
                         new
                         {
                             Id = 7,
-                            PublisherName = "Remzi Kitabevi"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1508),
+                            PublisherName = "Remzi Kitabevi",
+                            Status = 0
                         },
                         new
                         {
                             Id = 8,
-                            PublisherName = "Everest Yayınları"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1509),
+                            PublisherName = "Everest Yayınları",
+                            Status = 0
                         },
                         new
                         {
                             Id = 9,
-                            PublisherName = "Doğan Kitap"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1510),
+                            PublisherName = "Doğan Kitap",
+                            Status = 0
                         },
                         new
                         {
                             Id = 10,
-                            PublisherName = "Kafka Kitap"
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1511),
+                            PublisherName = "Kafka Kitap",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1512),
+                            PublisherName = "Metis Yayınları",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1513),
+                            PublisherName = "İthaki Yayınları",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1514),
+                            PublisherName = "Doğan Egmont",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1515),
+                            PublisherName = "Tudem Yayınları",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1516),
+                            PublisherName = "Türkiye İş Bankası Kültür Yayınları",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1516),
+                            PublisherName = "Omega Yayınları",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1517),
+                            PublisherName = "Kalem Kitap",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1518),
+                            PublisherName = "Beyaz Balina Yayınları",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1519),
+                            PublisherName = "Profil Yayıncılık",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1520),
+                            PublisherName = "Dergah Yayınları",
+                            Status = 0
                         });
                 });
 
