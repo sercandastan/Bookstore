@@ -1,104 +1,121 @@
-﻿$(function () {
-    // MOD: Sepet badge'ini göster/gizle ve sayıyı ayarla
+﻿
+$(function () {
+    // --------------------------------------------------
+    // 1) Sepet badge'ini göster/gizle ve sayıyı ayarla
+    // --------------------------------------------------
     function updateCartBadge(count) {
-        var $badge = $('#cartBadge');
+        const $badge = $('#cartBadge');
         if (count > 0) {
-            $badge.text(count).removeClass('d-none'); // göster
+            $badge.text(count).removeClass('d-none');
         } else {
-            $badge.addClass('d-none'); // gizle
+            $badge.text('').addClass('d-none');
         }
     }
 
-    // Sayfa yüklendiğinde veya modal açıldığında sepetteki mevcut öğeleri çek,
-    // hem modal tablosunu hem badge'i güncelle
-    loadCartItems();         // MOD: sayfa ilk yüklemede badge'i ayarla
-    $('#cartModal').on('show.bs.modal', loadCartItems);
-
-    // 2) Sepet verisini çek ve tabloyu doldur
+    // --------------------------------------------------
+    // 2) Sepet verisini çekip modal & badge'i güncelle
+    // --------------------------------------------------
     function loadCartItems() {
         $.getJSON('/Cart/GetCartItems', function (items) {
-            var $tbody = $('#cartItemsContainer').empty(),
-                totalCount = 0,
-                grandTotal = 0;
+            const $tbody = $('#cartItemsContainer').empty();
+            let totalCount = 0;
+            let grandTotal = 0;
 
-            items.forEach(function (item) {
-                var lineTotal = item.price * item.quantity;
+            items.forEach(item => {
+                const lineTotal = item.price * item.quantity;
                 totalCount += item.quantity;
                 grandTotal += lineTotal;
 
                 $tbody.append(
-                    '<tr data-id="' + item.bookId + '">' +
-                    '<td><img src="' + item.coverImage + '" width="50"/></td>' +
-                    '<td>' + item.title + '</td>' +
-                    '<td><input type="number" class="form-control form-control-sm qty-input" ' +
-                    'min="1" value="' + item.quantity + '" style="width:70px"/></td>' +
-                    '<td>₺' + item.price.toFixed(2) + '</td>' +
-                    '<td class="line-total">₺' + lineTotal.toFixed(2) + '</td>' +
-                    '<td><button class="btn btn-sm btn-danger remove-item">' +
-                    '<i class="bi bi-trash"></i>' +
-                    '</button></td>' +
-                    '</tr>'
+                    `<tr data-id="${item.bookId}">
+                        <td><img src="${item.coverImage}" width="50"/></td>
+                        <td>${item.title}</td>
+                        <td>
+                          <input type="number"
+                                 class="form-control form-control-sm qty-input"
+                                 min="1"
+                                 value="${item.quantity}"
+                                 style="width:70px"/>
+                        </td>
+                        <td>₺${item.price.toFixed(2)}</td>
+                        <td class="line-total">₺${lineTotal.toFixed(2)}</td>
+                        <td>
+                          <button class="btn btn-sm btn-danger remove-item">
+                            <i class="bi bi-trash"></i>
+                          </button>
+                        </td>
+                    </tr>`
                 );
             });
 
             $('#cartTotalCount').text(totalCount);
             $('#cartGrandTotal').text(grandTotal.toFixed(2));
-
-            // MOD: Badge'i de güncelle
             updateCartBadge(totalCount);
         });
     }
 
-    // 3) Adet değişince
+    // Sayfa yüklendiğinde ve modal açıldığında yükle
+    loadCartItems();
+    $('#cartModal').on('show.bs.modal', loadCartItems);
+
+    // --------------------------------------------------
+    // 3) Adet güncelle
+    // --------------------------------------------------
     $(document).on('change', '.qty-input', function () {
-        var $tr = $(this).closest('tr'),
-            bookId = $tr.data('id'),
-            qty = parseInt(this.value) || 1;
+        const $tr = $(this).closest('tr');
+        const bookId = $tr.data('id');
+        const qty = parseInt(this.value, 10) || 1;
 
-        $.post('/Cart/UpdateCartItem', { bookId: bookId, quantity: qty })
+        $.post('/Cart/UpdateCartItem',
+            { bookId: bookId, quantity: qty })
             .done(loadCartItems);
     });
 
-    // 4) Öğeyi silince
+    // --------------------------------------------------
+    // 4) Öğeyi sil
+    // --------------------------------------------------
     $(document).on('click', '.remove-item', function () {
-        var bookId = $(this).closest('tr').data('id');
-        $.post('/Cart/RemoveFromCart', { bookId: bookId })
+        const bookId = $(this).closest('tr').data('id');
+
+        $.post('/Cart/RemoveFromCart',
+            { bookId: bookId })
             .done(loadCartItems);
     });
 
-    // 5) Sepete ekleme butonu – AJAX ile çağır, toast ve badge güncelle
+    // --------------------------------------------------
+    // 5) Sepeti temizle
+    // --------------------------------------------------
+    $(document).on('click', '#clearCartButton', function (e) {
+        e.preventDefault();
+        console.log('🍺 clearCartButton clicked');
+        $.post('/Cart/Clear')
+            .done(function () {
+                
+                loadCartItems();
+            })
+            .fail(function (err) {
+                console.error('❌ /Cart/Clear failed', err);
+            });
+    });
+
+    // --------------------------------------------------
+    // 6) Sepete ekle
+    // --------------------------------------------------
     $(document).on('click', '.cart-button', function (e) {
         e.preventDefault();
+        const bookId = $(this).data('book-id');
 
-        var bookId = $(this).data('book-id'),
-            token = $('input[name="__RequestVerificationToken"]').val();
-
-        $.ajax({
-            url: '/Cart/Add',
-            method: 'POST',
-            dataType: 'html',              // controller’dan partial HTML geliyor
-            data: {
-                bookId: bookId,
-                quantity: 1,
-                __RequestVerificationToken: token
-            }
-        })
-            .done(function (htmlPartial) {
-                // MOD: Önceki toast’ı kaldır, yenisini ekle
+        $.post('/Cart/Add',
+            { bookId: bookId, quantity: 1 },
+            function (htmlPartial) {
+                // Toast partial'ı inject et
                 $('.toast-container').remove();
                 $('body').append(htmlPartial);
 
-                // MOD: Badge’i +1 arttır
-                var current = parseInt($('#cartBadge').text(), 10) || 0;
-                updateCartBadge(current + 1);
-
-                // MOD: Eğer modal açıksa içeriği yenile
-                if ($('#cartModal').hasClass('show')) {
-                    loadCartItems();
-                }
-            })
-            .fail(function () {
-                console.error('Sepete eklenirken bir hata oluştu.');
-            });
+                // Sepeti yeniden yükle
+                loadCartItems();
+            },
+            'html'
+        );
     });
 });

@@ -2,12 +2,14 @@
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
+
             <div class="modal-header">
                 <h5 class="modal-title" id="cartModalLabel">
                     Sepetim (<span id="cartTotalCount">0</span>)
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
             </div>
+
             <div class="modal-body">
                 <table class="table align-middle mb-0">
                     <thead>
@@ -20,20 +22,24 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody id="cartItemsContainer">
-                        
-                    </tbody>
+                    <tbody id="cartItemsContainer"></tbody>
                 </table>
                 <div class="text-end mt-3">
                     <h5>Genel Toplam: ₺<span id="cartGrandTotal">0.00</span></h5>
                 </div>
             </div>
+
             <div class="modal-footer">
+                <button type="button"
+                        id="clearCartButton"
+                        class="btn btn-outline-secondary">
+                    Sepeti Temizle
+                </button>
                 <button class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-                <a asp-area="" asp-controller="Order" asp-action="Checkout" class="btn btn-primary">
-                    Siparişi Onayla
-                </a>
+                <a asp-controller="Order" asp-action="Checkout" class="btn btn-primary">Siparişi Onayla</a>
             </div>
+
+
         </div>
     </div>
 </div>

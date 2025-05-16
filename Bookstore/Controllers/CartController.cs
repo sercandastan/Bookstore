@@ -18,6 +18,7 @@ namespace Bookstore.Controllers
         }
 
         [HttpPost]
+       
         public IActionResult Add(int bookId, short quantity = 1)
         {
             var cart = Request.GetCart();
@@ -26,7 +27,6 @@ namespace Bookstore.Controllers
             else cart.Add(new Cart_DTO { BookId = bookId, Quantity = quantity });
             Response.SetCart(cart);
 
-            // Ajax isteğiyse toast partial’ı dön
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
             {
                 TempData["ToastMessage"] = "🛒 Kitap sepete eklendi.";
@@ -34,7 +34,6 @@ namespace Bookstore.Controllers
                 return PartialView("~/Views/Shared/_ToastPartial.cshtml");
             }
 
-            // Normal post ise eski davranış
             return RedirectToAction("Index", "Home");
         }
 
@@ -53,14 +52,15 @@ namespace Bookstore.Controllers
                     Price = detail.Price,
                     Quantity = dto.Quantity,
                     CoverImage = string.IsNullOrEmpty(detail.CoverImage)
-                                 ? "/BookCoverImages/defaultBookCover.png"
-                                 : detail.CoverImage
+                                   ? "/BookCoverImages/defaultBookCover.png"
+                                   : detail.CoverImage
                 });
             }
             return Json(vmList);
         }
 
         [HttpPost]
+      
         public IActionResult UpdateCartItem(int bookId, short quantity)
         {
             var cart = Request.GetCart();
@@ -74,6 +74,7 @@ namespace Bookstore.Controllers
         }
 
         [HttpPost]
+       
         public IActionResult RemoveFromCart(int bookId)
         {
             var cart = Request.GetCart();
@@ -83,6 +84,14 @@ namespace Bookstore.Controllers
                 cart.Remove(item);
                 Response.SetCart(cart);
             }
+            return Ok();
+        }
+
+        [HttpPost]
+     
+        public IActionResult Clear()
+        {
+            Response.SetCart(new List<Cart_DTO>());
             return Ok();
         }
     }

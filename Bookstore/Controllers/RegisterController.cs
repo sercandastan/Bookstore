@@ -36,21 +36,27 @@ namespace Bookstore.Controllers
                 return PartialView("~/Views/Shared/Partials/Modals/_RegisterModal.cshtml", registerVm);
             }
 
-            var RegisterDto = _mapper.Map<Register_DTO>(registerVm);
-            var result = await _registerService.RegisterAsync(RegisterDto);
+            var registerDto = _mapper.Map<Register_DTO>(registerVm);
+            var result = await _registerService.RegisterAsync(registerDto);
+
             if (!result.Succeeded)
             {
                 foreach (var error in result.Errors)
                     ModelState.AddModelError(string.Empty, error.Description);
+
+                TempData["RegisterError"] = "Kayıt başarısız.";
                 return PartialView("~/Views/Shared/Partials/Modals/_RegisterModal.cshtml", registerVm);
+
             }
 
-            var user = await _userManager.FindByEmailAsync(RegisterDto.Email);
-            await _signInManager.SignInAsync(user, isPersistent: false);
-            return RedirectToAction("Login", "Login");
+            var user = await _userManager.FindByEmailAsync(registerDto.Email);
+            if (user != null)
+            {
+                await _signInManager.SignInAsync(user, isPersistent: false);
+            }
 
-
-
+            return Json(new { success = true, redirectUrl = Url.Action("Index", "Home", new { area = "UserPanel" }) });
         }
+
     }
 }
