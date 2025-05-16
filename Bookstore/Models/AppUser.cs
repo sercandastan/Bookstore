@@ -13,5 +13,7 @@ namespace Bookstore.Models
 
         //Navigation Property
         public ICollection<Book>? Books { get; set; }
+
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

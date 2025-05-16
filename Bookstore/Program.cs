@@ -9,8 +9,9 @@ using Bookstore.Services.LoginService;
 using Bookstore.Services.PublisherService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using StackExchange.Redis;
+
 using Microsoft.OpenApi.Models;
+using Bookstore.Services.RegisterService;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,18 +23,6 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BookstoreDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString
 ("DefaultConnection")));
-
-
-// Redis connection string'i al
-var redisConnectionString = builder.Configuration["Redis:ConnectionString"];
-
-// Redis baðlantýsýný oluþtur
-builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
-{
-    return ConnectionMultiplexer.Connect(redisConnectionString);
-});
-
-
 
 
 builder.Services.AddIdentity<AppUser,AppRole>(options =>
@@ -72,9 +61,14 @@ builder.Services.AddTransient<IPublisherService, PublisherService >();
 //LoginService
 builder.Services.AddTransient<ILoginService, LoginService>();
 
+//RegisterService
+builder.Services.AddTransient<IRegisterService, RegisterService>();
+
 
 //BookAuthorService ve BookAuthorRepo
 builder.Services.AddTransient<IBookAuthorRepository, BookAuthorRepository>();
+
+
 
 
 // Swagger servislerini ekle

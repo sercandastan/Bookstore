@@ -7,7 +7,7 @@ namespace Bookstore.Models
     {
         public int Id { get; set; }
         public string Title { get; set; } //Adı
-        public double Price { get; set; } //Fiyatı
+        public decimal Price { get; set; } //Fiyatı
         public int PublicationYear { get; set; } //İlk yayınlandığı yıl
         public int EditionNumber { get; set; } //Baskı sayısı
         public string CoverText { get; set; } //Arka kapağındaki yazı
@@ -30,7 +30,9 @@ namespace Bookstore.Models
         public Category? Category { get; set; }
         public Publisher? Publisher { get; set; }
         public AppUser? User { get; set; }
-        public ICollection<BookAuthor> BookAuthors { get; set; }
+        public ICollection<BookAuthor> BookAuthors { get; set; } = new List<BookAuthor>();
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+
 
     }
 }

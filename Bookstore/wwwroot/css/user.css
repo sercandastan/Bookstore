@@ -21,3 +21,14 @@
         .navbar-user .nav-link:hover {
             color: var(--accent) !important;
         }
+
+.btn-accent {
+    background-color: var(--accent) !important;  */
+    border-color: var(--accent) !important;
+    color: var(--light-text) !important;
+}
+
+    .btn-accent:hover {
+        background-color: var(--warning) !important; 
+        border-color: var(--warning) !important;
+    }

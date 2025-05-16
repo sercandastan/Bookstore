@@ -20,5 +20,7 @@ namespace Bookstore.Areas.UserPanel.Controllers
            var books = await _bookService.GetAllBooksDetailedAsync();
             return View(books);
         }
+
+        
     }
 }

@@ -12,7 +12,7 @@ namespace Bookstore.Services.BookService
 
         public Task<Book_DTO> GetBookByIdAsync(int id);
 
-        public Task<BookDetail_DTO> GetBookDetailByIdAsync(int id);
+        public Task<DetailsBook_DTO> GetBookDetailByIdAsync(int id);
 
         public Task<bool> DeleteBookAsync(int id);
 

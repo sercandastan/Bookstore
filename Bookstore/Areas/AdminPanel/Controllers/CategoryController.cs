@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
-using Bookstore.Areas.AdminPanel.ViewModels.Category_VM;
 using Bookstore.Models.DTOs.Category;
+using Bookstore.Models.ViewModels.Category_VM;
 using Bookstore.Services.CategoryService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

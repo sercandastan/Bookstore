@@ -1,0 +1,81 @@
+﻿@* Sepet Modal *@
+@{
+    var cartItems = ViewBag.CartItems as List<Bookstore.Models.ViewModels.Cart_VM.Cart_VM> ?? new List<Bookstore.Models.ViewModels.Cart_VM.Cart_VM>();
+}
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Sepetim (@cartItems.Sum(i => i.Quantity))</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+            <div class="modal-body">
+                @if (!cartItems.Any())
+                {
+                    <p>Sepetiniz boş.</p>
+                }
+                else
+                {
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Kapak</th>
+                                <th>Başlık</th>
+                                <th>Adet</th>
+                                <th>Birim Fiyat</th>
+                                <th>Toplam</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in cartItems)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="@item.CoverImage" alt="@item.Title" width="50" />
+                                    </td>
+                                    <td>@item.Title</td>
+                                    <td>@item.Quantity</td>
+                                    <td>₺@item.Price.ToString("N2")</td>
+                                    <td>₺@item.TotalPrice.ToString("N2")</td>
+                                    <td>
+                                        <form asp-area="UserPanel" asp-controller="Cart" asp-action="Remove" method="post" class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="bookId" value="@item.BookId" />
+                                            <button type="submit" class="btn btn-sm btn-outline-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+            <div class="modal-footer">
+                @if (cartItems.Any())
+                {
+                    <form asp-area="UserPanel" asp-controller="Cart" asp-action="Clear" method="post" class="me-auto">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-outline-secondary">Sepeti Temizle</button>
+                    </form>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form asp-area="UserPanel" asp-controller="Cart" asp-action="Checkout" method="post">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-primary">Siparişi Onayla</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a href="~/Identity/Account/Login" class="btn btn-primary">
+                            Giriş Yap & Siparişi Onayla
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>

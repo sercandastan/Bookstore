@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Bookstore.Areas.AdminPanel.ViewModels.Author_VM;
-using Bookstore.Areas.AdminPanel.ViewModels.Publisher_VM;
+
 using Bookstore.Models.DTOs.Author;
+using Bookstore.Models.ViewModels.Author_VM;
 using Bookstore.Services.AuthorService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -1,0 +1,64 @@
+﻿@using Bookstore.Models.ViewModels.Register_VM
+@model Register_VM
+
+
+
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel"><i class="bi bi-person-plus me-2"></i>Kayıt Ol</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-area="" asp-controller="Register" asp-action="Register" method="post" novalidate id="registerForm">
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6">
+                            <label asp-for="Name" class="form-label">Ad</label>
+                            <input asp-for="Name" class="form-control" placeholder="Adınız" />
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label asp-for="Surname" class="form-label">Soyad</label>
+                            <input asp-for="Surname" class="form-control" placeholder="Soyadınız" />
+                            <span asp-validation-for="Surname" class="text-danger small"></span>
+                        </div>
+                        <div class="col-12">
+                            <label asp-for="Gender" class="form-label">Cinsiyet</label>
+                            <select asp-for="Gender" class="form-select">
+                                <option value="">Seçiniz</option>
+                                <option value="Male">Erkek</option>
+                                <option value="Female">Kadın</option>
+                            </select>
+                            <span asp-validation-for="Gender" class="text-danger small"></span>
+                        </div>
+                        <div class="col-12">
+                            <label asp-for="UserName" class="form-label">Kullanıcı Adı</label>
+                            <input asp-for="UserName" class="form-control" placeholder="Kullanıcı Adı" />
+                            <span asp-validation-for="UserName" class="text-danger small"></span>
+                        </div>
+                        <div class="col-12">
+                            <label asp-for="Email" class="form-label">E-posta</label>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="mail@ornek.com" />
+                            <span asp-validation-for="Email" class="text-danger small"></span>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label asp-for="Password" class="form-label">Şifre</label>
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Şifre" />
+                            <span asp-validation-for="Password" class="text-danger small"></span>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label asp-for="ConfirmPassword" class="form-label">Şifre (Tekrar)</label>
+                            <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Tekrar Şifre" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">İptal</button>
+                    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

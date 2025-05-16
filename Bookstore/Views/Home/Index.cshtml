@@ -1,30 +1,30 @@
 ﻿@model IEnumerable<Bookstore.Models.DTOs.Book.Book_DTO>
-
 @{
     ViewData["Title"] = "Kitaplar";
 }
 
 <div class="container mt-4">
-    <!-- Kitap Kartları -->
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4">
         @foreach (var item in Model)
         {
             <div class="col">
                 <div class="book-card">
-                    <!-- Kapak Görseli -->
+                    <!-- Kapak -->
                     <img src="@(string.IsNullOrEmpty(item.CoverImage)
                         ? "/BookCoverImages/defaultBookCover.png"
                         : item.CoverImage)"
-                         alt="@item.Title Kapak Görseli"
+                         alt="@item.Title Kapak"
                          class="book-cover" />
 
-                    <!-- Sepete Ekle Butonu -->
-                    <button class="cart-button" title="Sepete Ekle">
+                    <!-- AJAX Sepete Ekle Butonu -->
+                    <button type="button"
+                            class="cart-button btn btn-sm btn-outline-primary"
+                            data-book-id="@item.Id"
+                            title="Sepete Ekle">
                         <i class="bi bi-cart-plus"></i>
                     </button>
 
                     <!-- Kitap Bilgileri -->
-
                     <div class="book-card-body">
                         <h5 class="book-title">@item.Title</h5>
                         <ul class="book-meta list-unstyled small text-muted mb-3">

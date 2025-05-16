@@ -1,0 +1,78 @@
+﻿@model Bookstore.Models.ViewModels.Book_VM.DetailsBook_VM
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="row g-0">
+            <!-- Kapak Görseli -->
+            <div class="col-md-4">
+                <img src="@(string.IsNullOrEmpty(Model.CoverImage)
+                             ? "/BookCoverImages/defaultBookCover.png"
+                             : Model.CoverImage)"
+                     alt="@Model.Title Kapak"
+                     class="img-fluid rounded-start h-100 w-100 object-fit-cover" />
+            </div>
+
+            <!-- Detaylar -->
+            <div class="col-md-8">
+                <div class="card-body d-flex flex-column">
+                    <h2 class="card-title mb-3">@Model.Title</h2>
+
+                    <ul class="list-group list-group-flush mb-3">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Fiyat</strong>
+                            <span class="text-success">₺@Model.Price.ToString("N2")</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Yayın Yılı</strong>
+                            <span>@Model.PublicationYear</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Baskı</strong>
+                            <span>@Model.EditionNumber</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Kategori</strong>
+                            <span>@Model.CategoryName</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Yayınevi</strong>
+                            <span>@Model.PublisherName</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Yazar(lar):</strong>
+                            @if (Model.AuthorNames?.Any() == true)
+                            {
+                                @string.Join(", ", Model.AuthorNames)
+                            }
+                            else
+                            {
+                                <span class="text-muted">Bilinmiyor</span>
+                            }
+                        </li>
+                    </ul>
+
+                    <h5>Açıklama</h5>
+                    <p class="flex-grow-1">@Model.CoverText</p>
+
+                    <div class="mt-5 d-flex">
+                        <a asp-area="UserPanel"
+                           asp-controller="Home"
+                           asp-action="Index"
+                           class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left-circle me-1"></i> Geri Dön
+                        </a>
+                       
+                        <button type="button" class="btn btn-success ms-auto">
+                            <i class="bi bi-cart-plus me-1"></i> Sepete Ekle
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

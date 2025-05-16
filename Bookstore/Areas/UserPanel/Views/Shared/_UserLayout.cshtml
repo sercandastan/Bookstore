@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     Layout = null;
     var title = ViewData["Title"] ?? "SatırSatır.com";
 }
@@ -24,6 +25,8 @@
 
     <!-- Navbar User -->
     @await Html.PartialAsync("~/Areas/UserPanel/Views/Shared/Partials/_NavbarUser.cshtml")
+    
+
 
     <!-- Ana İçerik -->
     <main class="container mt-4">
@@ -42,5 +45,14 @@
 
     <script src="~/js/shared/toast.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
+
+       <!-- Sepet Modal’ı render et -->
+       @await Html.PartialAsync(
+         "~/Areas/UserPanel/Views/Shared/_UserCartModal.cshtml",
+         ViewBag.CartItems as List<Bookstore.Models.ViewModels.Cart_VM.Cart_VM>
+            )
+
+
+
 </body>
 </html>

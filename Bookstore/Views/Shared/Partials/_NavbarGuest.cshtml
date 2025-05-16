@@ -1,28 +1,51 @@
-﻿
-<nav class="navbar navbar-expand-lg navbar-guest">
-    <div class="container">
-        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-            <img src="~/images/sslogoo.png" alt="SatırSatır.com" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#guestNavbar" aria-controls="guestNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+﻿<nav class="navbar navbar-expand-lg navbar-guest">
+	<div class="container">
+		<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+			<img src="~/images/sslogoo.png" alt="SatırSatır.com" />
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#guestNavbar" aria-controls="guestNavbar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-        <div class="collapse navbar-collapse" id="guestNavbar">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Kitaplar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Login">Giriş</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-light ms-2" asp-area="Identity" asp-page="/Account/Register">Kayıt Ol</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+		<div class="collapse navbar-collapse" id="guestNavbar">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Kitaplar</a>
+				</li>
+
+
+				<li class="nav-item position-relative">
+
+					<a id="cartIcon"
+					   href="#"
+					   class="nav-link position-relative"
+					   data-bs-toggle="modal"
+					   data-bs-target="#cartModal">
+						<i class="bi bi-cart-fill me-1"></i> Sepetim
+					</a>
+
+					<span id="cartBadge"
+						  class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle d-none">
+						0
+					</span>
+				</li>
+
+
+				<li class="nav-item">
+					<a class="nav-link" asp-area="" asp-controller="Login" asp-action="Login">Giriş</a>
+				</li>
+				<li class="nav-item">
+					<a href="#"
+					   class="text-accent"
+					   data-bs-toggle="modal"
+					   data-bs-target="#registerModal">
+						<i class="bi bi-person-plus me-1"></i> Kayıt Ol
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>

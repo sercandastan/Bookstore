@@ -55,14 +55,14 @@ namespace Bookstore.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "1e45e12d-3247-47f7-88bb-6a8f18df73b1",
+                            ConcurrencyStamp = "29df3d37-3b8b-48ef-bb02-e3e281197ec9",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "cd15ffa4-fb0f-48ec-8151-2e65aad0683b",
+                            ConcurrencyStamp = "cd81daa5-c7a2-4767-ab60-ddb7b65f6c68",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -151,7 +151,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3367000c-e282-471c-a01d-256fdafcc155",
+                            ConcurrencyStamp = "a3ddacb8-5d98-492d-b91b-820bf77f252b",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             Gender = 0,
@@ -159,9 +159,9 @@ namespace Bookstore.Migrations
                             Name = "Super",
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGcFxZ2aluQvRBT0WkT4u0gXZBqTxYlATu+AnQXmQBvY2bi9JGJzUKewqf2vsfmDbA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPALgTzIoYOZ96ZUcArcVSC9CypFwpRcgnQjrdULvVpiTuWs+zWjpb5uJ8N7dnEOPQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "09b70f20-1b87-47fa-b617-b48989e8c4d2",
+                            SecurityStamp = "5bf5bfa7-36fb-4254-8aaf-7d39152162f3",
                             Surname = "Admin",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
@@ -170,7 +170,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b2fb76d9-60c6-4e5d-b3ef-b7736789f689",
+                            ConcurrencyStamp = "9a5d74e9-9b0e-409d-94f2-488cceb2e165",
                             Email = "sercandastan@hotmail.com",
                             EmailConfirmed = false,
                             Gender = 0,
@@ -178,9 +178,9 @@ namespace Bookstore.Migrations
                             Name = "Sercan",
                             NormalizedEmail = "SERCANDASTAN@HOTMAIL.COM",
                             NormalizedUserName = "SERCANDASTAN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKisYljlzbeeh7M+x/8J0KFxxjxSu6scaoQ2mCiaMX2jVEbYdKH6mAEmZuZW8dRddQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEsKb9RyZkehpitcVlyhq1gdJGKa+QB+HtXTx1nglpgTPQRTftXDe2rfhrZjiOWo7Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e9e259e7-6028-47e9-9adf-ab33e670175c",
+                            SecurityStamp = "7f369196-513c-4c5c-a986-32f7c7897b32",
                             Surname = "Daştan",
                             TwoFactorEnabled = false,
                             UserName = "sercandastan"
@@ -224,7 +224,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 1,
                             BirthYear = (short)1990,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(691),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9750),
                             FullName = "Matt Haig",
                             Status = 0
                         },
@@ -232,7 +232,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 2,
                             BirthYear = (short)1903,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(708),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9769),
                             FullName = "George Orwell",
                             Status = 0
                         },
@@ -240,7 +240,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 3,
                             BirthYear = (short)1775,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(710),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9771),
                             FullName = "Jane Austen",
                             Status = 0
                         },
@@ -248,7 +248,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 4,
                             BirthYear = (short)1947,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(711),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9772),
                             FullName = "Stephen King",
                             Status = 0
                         },
@@ -256,7 +256,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 5,
                             BirthYear = (short)1965,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(712),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9773),
                             FullName = "J.K. Rowling",
                             Status = 0
                         },
@@ -264,7 +264,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 6,
                             BirthYear = (short)1890,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(713),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9774),
                             FullName = "Agatha Christie",
                             Status = 0
                         },
@@ -272,7 +272,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 7,
                             BirthYear = (short)1828,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(714),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9775),
                             FullName = "Leo Tolstoy",
                             Status = 0
                         },
@@ -280,7 +280,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 8,
                             BirthYear = (short)1899,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(715),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9776),
                             FullName = "Ernest Hemingway",
                             Status = 0
                         },
@@ -288,7 +288,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 9,
                             BirthYear = (short)1949,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(716),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9777),
                             FullName = "Haruki Murakami",
                             Status = 0
                         },
@@ -296,7 +296,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 10,
                             BirthYear = (short)1927,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(717),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9778),
                             FullName = "Gabriel Garcia Marquez",
                             Status = 0
                         },
@@ -304,7 +304,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 11,
                             BirthYear = (short)1952,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(719),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9839),
                             FullName = "Orhan Pamuk",
                             Status = 0
                         },
@@ -312,7 +312,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 12,
                             BirthYear = (short)1971,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(720),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9840),
                             FullName = "Elif Şafak",
                             Status = 0
                         },
@@ -320,7 +320,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 13,
                             BirthYear = (short)1821,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(721),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9841),
                             FullName = "Fyodor Dostoevsky",
                             Status = 0
                         },
@@ -328,7 +328,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 14,
                             BirthYear = (short)1871,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(722),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9842),
                             FullName = "Marcel Proust",
                             Status = 0
                         },
@@ -336,7 +336,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 15,
                             BirthYear = (short)1882,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(723),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9843),
                             FullName = "Virginia Woolf",
                             Status = 0
                         },
@@ -344,7 +344,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 16,
                             BirthYear = (short)1877,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(724),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9845),
                             FullName = "Hermann Hesse",
                             Status = 0
                         },
@@ -352,7 +352,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 17,
                             BirthYear = (short)1835,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(725),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9846),
                             FullName = "Mark Twain",
                             Status = 0
                         },
@@ -360,7 +360,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 18,
                             BirthYear = (short)1883,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(726),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9847),
                             FullName = "Franz Kafka",
                             Status = 0
                         },
@@ -368,7 +368,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 19,
                             BirthYear = (short)1947,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(727),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9848),
                             FullName = "Paulo Coelho",
                             Status = 0
                         },
@@ -376,7 +376,7 @@ namespace Bookstore.Migrations
                         {
                             Id = 20,
                             BirthYear = (short)1964,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(810),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 889, DateTimeKind.Local).AddTicks(9849),
                             FullName = "Dan Brown",
                             Status = 0
                         });
@@ -420,8 +420,8 @@ namespace Bookstore.Migrations
                     b.Property<int>("PublisherId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -451,12 +451,12 @@ namespace Bookstore.Migrations
                             CategoryId = 8,
                             CoverImage = "/BookCoverImages/gyk.jpg",
                             CoverText = "Hayatın olasılıkları üzerine etkileyici bir hikaye.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2105),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1162),
                             EditionNumber = 1,
                             Price = 120m,
                             PublicationYear = (short)2020,
                             PublisherId = 1,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Gece Yarısı Kütüphanesi",
                             UserId = 1
                         },
@@ -466,12 +466,12 @@ namespace Bookstore.Migrations
                             CategoryId = 2,
                             CoverImage = "/BookCoverImages/1984.jpg",
                             CoverText = "Distopik bir geleceğin sert tasviri.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2109),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1166),
                             EditionNumber = 5,
                             Price = 90m,
                             PublicationYear = (short)1949,
                             PublisherId = 2,
-                            Status = 0,
+                            Status = "Added",
                             Title = "1984",
                             UserId = 1
                         },
@@ -481,12 +481,12 @@ namespace Bookstore.Migrations
                             CategoryId = 6,
                             CoverImage = "/BookCoverImages/avg.jpg",
                             CoverText = "Zarafet ve sınıf çatışmalarının romanı.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2110),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1168),
                             EditionNumber = 3,
                             Price = 85m,
                             PublicationYear = (short)1813,
                             PublisherId = 3,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Aşk ve Gurur",
                             UserId = 1
                         },
@@ -496,12 +496,12 @@ namespace Bookstore.Migrations
                             CategoryId = 3,
                             CoverImage = "/BookCoverImages/O.jpg",
                             CoverText = "Korku dolu bir kasaba ve geçmişin karanlığı.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2112),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1170),
                             EditionNumber = 2,
                             Price = 110m,
                             PublicationYear = (short)1986,
                             PublisherId = 4,
-                            Status = 0,
+                            Status = "Added",
                             Title = "O",
                             UserId = 1
                         },
@@ -511,12 +511,12 @@ namespace Bookstore.Migrations
                             CategoryId = 7,
                             CoverImage = "/BookCoverImages/hpvft.jpg",
                             CoverText = "Büyücü bir çocuğun destansı yolculuğu.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2113),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1172),
                             EditionNumber = 1,
                             Price = 100m,
                             PublicationYear = (short)1997,
                             PublisherId = 5,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Harry Potter ve Felsefe Taşı",
                             UserId = 1
                         },
@@ -526,12 +526,12 @@ namespace Bookstore.Migrations
                             CategoryId = 5,
                             CoverImage = "/BookCoverImages/okz.jpg",
                             CoverText = "Gerilim ve gizemin en iyi örneklerinden.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2115),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1173),
                             EditionNumber = 4,
                             Price = 95m,
                             PublicationYear = (short)1939,
                             PublisherId = 6,
-                            Status = 0,
+                            Status = "Added",
                             Title = "On Küçük Zenci",
                             UserId = 1
                         },
@@ -541,12 +541,12 @@ namespace Bookstore.Migrations
                             CategoryId = 9,
                             CoverImage = "/BookCoverImages/svb.jpg",
                             CoverText = "Rusya'nın tarihsel ve kültürel panoraması.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2116),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1201),
                             EditionNumber = 2,
                             Price = 130m,
                             PublicationYear = (short)1869,
                             PublisherId = 7,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Savaş ve Barış",
                             UserId = 1
                         },
@@ -556,12 +556,12 @@ namespace Bookstore.Migrations
                             CategoryId = 1,
                             CoverImage = "/BookCoverImages/yavd.jpg",
                             CoverText = "Direnişin ve yalnızlığın metaforu.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2118),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1203),
                             EditionNumber = 2,
                             Price = 80m,
                             PublicationYear = (short)1952,
                             PublisherId = 8,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Yaşlı Adam ve Deniz",
                             UserId = 1
                         },
@@ -571,12 +571,12 @@ namespace Bookstore.Migrations
                             CategoryId = 2,
                             CoverImage = "/BookCoverImages/1q84.jpg",
                             CoverText = "Paralel evrende geçen gizemli bir yolculuk.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2119),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1205),
                             EditionNumber = 1,
                             Price = 125m,
                             PublicationYear = (short)2009,
                             PublisherId = 9,
-                            Status = 0,
+                            Status = "Added",
                             Title = "1Q84",
                             UserId = 1
                         },
@@ -586,12 +586,12 @@ namespace Bookstore.Migrations
                             CategoryId = 10,
                             CoverImage = "/BookCoverImages/yy.jpg",
                             CoverText = "Bir ailenin kuşaklar arası büyülü hikayesi.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2121),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1206),
                             EditionNumber = 3,
                             Price = 115m,
                             PublicationYear = (short)1967,
                             PublisherId = 10,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Yüzyıllık Yalnızlık",
                             UserId = 1
                         },
@@ -601,12 +601,12 @@ namespace Bookstore.Migrations
                             CategoryId = 3,
                             CoverImage = "/BookCoverImages/korluk.jpg",
                             CoverText = "Toplumsal çöküşün karanlık portresi.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2122),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1208),
                             EditionNumber = 2,
                             Price = 105m,
                             PublicationYear = (short)1995,
                             PublisherId = 11,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Körlük",
                             UserId = 1
                         },
@@ -616,12 +616,12 @@ namespace Bookstore.Migrations
                             CategoryId = 10,
                             CoverImage = "/BookCoverImages/masumiyet.jpg",
                             CoverText = "Takıntı ile aşkın sınırlarında bir hikaye.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2124),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1210),
                             EditionNumber = 1,
                             Price = 95m,
                             PublicationYear = (short)2008,
                             PublisherId = 12,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Masumiyet Müzesi",
                             UserId = 1
                         },
@@ -631,12 +631,12 @@ namespace Bookstore.Migrations
                             CategoryId = 6,
                             CoverImage = "/BookCoverImages/scuzceza.jpg",
                             CoverText = "Vicdan azabının psikolojik çözümlemesi.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2125),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1212),
                             EditionNumber = 3,
                             Price = 110m,
                             PublicationYear = (short)1866,
                             PublisherId = 13,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Suç ve Ceza",
                             UserId = 1
                         },
@@ -646,12 +646,12 @@ namespace Bookstore.Migrations
                             CategoryId = 8,
                             CoverImage = "/BookCoverImages/kayipzaman.jpg",
                             CoverText = "Belleğin ince notaları.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2127),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1214),
                             EditionNumber = 1,
                             Price = 150m,
                             PublicationYear = (short)1913,
                             PublisherId = 14,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Kayıp Zamanın İzinde",
                             UserId = 1
                         },
@@ -661,12 +661,12 @@ namespace Bookstore.Migrations
                             CategoryId = 4,
                             CoverImage = "/BookCoverImages/mrsdalloway.jpg",
                             CoverText = "Bir günün özenle işlenmiş portresi.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2128),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1215),
                             EditionNumber = 2,
                             Price = 90m,
                             PublicationYear = (short)1925,
                             PublisherId = 15,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Mrs Dalloway",
                             UserId = 1
                         },
@@ -676,12 +676,12 @@ namespace Bookstore.Migrations
                             CategoryId = 4,
                             CoverImage = "/BookCoverImages/siddhartha.jpg",
                             CoverText = "Ruhani yolculuğa dair bir başyapıt.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2130),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1217),
                             EditionNumber = 1,
                             Price = 85m,
                             PublicationYear = (short)1922,
                             PublisherId = 16,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Siddhartha",
                             UserId = 1
                         },
@@ -691,12 +691,12 @@ namespace Bookstore.Migrations
                             CategoryId = 1,
                             CoverImage = "/BookCoverImages/tomsawyer.jpg",
                             CoverText = "Çocukluğun neşeli dünyası.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2131),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1219),
                             EditionNumber = 5,
                             Price = 75m,
                             PublicationYear = (short)1876,
                             PublisherId = 17,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Tom Sawyer’ın Maceraları",
                             UserId = 1
                         },
@@ -706,12 +706,12 @@ namespace Bookstore.Migrations
                             CategoryId = 3,
                             CoverImage = "/BookCoverImages/donusum.jpg",
                             CoverText = "Varoluşsal kaygının sembolik öyküsü.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2133),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1221),
                             EditionNumber = 1,
                             Price = 80m,
                             PublicationYear = (short)1915,
                             PublisherId = 18,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Dönüşüm",
                             UserId = 1
                         },
@@ -721,12 +721,12 @@ namespace Bookstore.Migrations
                             CategoryId = 7,
                             CoverImage = "/BookCoverImages/simyaci.jpg",
                             CoverText = "Rüyanın peşinde bir yolculuk.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2134),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1222),
                             EditionNumber = 3,
                             Price = 95m,
                             PublicationYear = (short)1988,
                             PublisherId = 19,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Simyacı",
                             UserId = 1
                         },
@@ -736,12 +736,12 @@ namespace Bookstore.Migrations
                             CategoryId = 2,
                             CoverImage = "/BookCoverImages/davinci.jpg",
                             CoverText = "Tarih, sanat ve gizemin kesiştiği nokta.",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 583, DateTimeKind.Local).AddTicks(2135),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(1224),
                             EditionNumber = 2,
                             Price = 120m,
                             PublicationYear = (short)2003,
                             PublisherId = 20,
-                            Status = 0,
+                            Status = "Added",
                             Title = "Da Vinci Şifresi",
                             UserId = 1
                         });
@@ -876,47 +876,6 @@ namespace Bookstore.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Bookstore.Models.Cart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("KitapId")
-                        .HasColumnType("int");
-
-                    b.Property<short>("Quantity")
-                        .HasColumnType("smallint");
-
-                    b.Property<int?>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BookId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Carts");
-                });
-
             modelBuilder.Entity("Bookstore.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -951,142 +910,196 @@ namespace Bookstore.Migrations
                         {
                             Id = 1,
                             CategoryName = "Roman",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(640),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6221),
                             Status = 0
                         },
                         new
                         {
                             Id = 2,
                             CategoryName = "Bilim Kurgu",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(646),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6226),
                             Status = 0
                         },
                         new
                         {
                             Id = 3,
                             CategoryName = "Korku",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(647),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6227),
                             Status = 0
                         },
                         new
                         {
                             Id = 4,
                             CategoryName = "Felsefe",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(648),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6228),
                             Status = 0
                         },
                         new
                         {
                             Id = 5,
                             CategoryName = "Polisiye",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(649),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6229),
                             Status = 0
                         },
                         new
                         {
                             Id = 6,
                             CategoryName = "Klasik",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(650),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6230),
                             Status = 0
                         },
                         new
                         {
                             Id = 7,
                             CategoryName = "Fantastik",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(650),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6231),
                             Status = 0
                         },
                         new
                         {
                             Id = 8,
                             CategoryName = "Modern Edebiyat",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(651),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6232),
                             Status = 0
                         },
                         new
                         {
                             Id = 9,
                             CategoryName = "Tarih",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(652),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6233),
                             Status = 0
                         },
                         new
                         {
                             Id = 10,
                             CategoryName = "Latin Amerika Edebiyatı",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(653),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6234),
                             Status = 0
                         },
                         new
                         {
                             Id = 11,
                             CategoryName = "Çocuk",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(654),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6234),
                             Status = 0
                         },
                         new
                         {
                             Id = 12,
                             CategoryName = "Psikoloji",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(655),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6235),
                             Status = 0
                         },
                         new
                         {
                             Id = 13,
                             CategoryName = "Kişisel Gelişim",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(656),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6236),
                             Status = 0
                         },
                         new
                         {
                             Id = 14,
                             CategoryName = "Biyografi",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(657),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6237),
                             Status = 0
                         },
                         new
                         {
                             Id = 15,
                             CategoryName = "Gezi",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(658),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6238),
                             Status = 0
                         },
                         new
                         {
                             Id = 16,
                             CategoryName = "Sağlık",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(659),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6239),
                             Status = 0
                         },
                         new
                         {
                             Id = 17,
                             CategoryName = "Ekonomi",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(660),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6240),
                             Status = 0
                         },
                         new
                         {
                             Id = 18,
                             CategoryName = "Sanat",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(660),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6241),
                             Status = 0
                         },
                         new
                         {
                             Id = 19,
                             CategoryName = "Şiir",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(661),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6242),
                             Status = 0
                         },
                         new
                         {
                             Id = 20,
                             CategoryName = "Çağdaş Dünya Edebiyatı",
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(662),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 890, DateTimeKind.Local).AddTicks(6243),
                             Status = 0
                         });
+                });
+
+            modelBuilder.Entity("Bookstore.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OrderStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Bookstore.Models.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<short>("Quantity")
+                        .HasColumnType("smallint");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("Bookstore.Models.Publisher", b =>
@@ -1122,140 +1135,140 @@ namespace Bookstore.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1501),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(365),
                             PublisherName = "Pegasus Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1503),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(369),
                             PublisherName = "Can Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1504),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(370),
                             PublisherName = "İş Bankası Kültür Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1505),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(371),
                             PublisherName = "Altın Kitaplar",
                             Status = 0
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1506),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(372),
                             PublisherName = "YKY",
                             Status = 0
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1507),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(373),
                             PublisherName = "Epsilon Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1508),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(374),
                             PublisherName = "Remzi Kitabevi",
                             Status = 0
                         },
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1509),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(375),
                             PublisherName = "Everest Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1510),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(376),
                             PublisherName = "Doğan Kitap",
                             Status = 0
                         },
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1511),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(377),
                             PublisherName = "Kafka Kitap",
                             Status = 0
                         },
                         new
                         {
                             Id = 11,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1512),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(378),
                             PublisherName = "Metis Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 12,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1513),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(379),
                             PublisherName = "İthaki Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 13,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1514),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(380),
                             PublisherName = "Doğan Egmont",
                             Status = 0
                         },
                         new
                         {
                             Id = 14,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1515),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(381),
                             PublisherName = "Tudem Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 15,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1516),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(382),
                             PublisherName = "Türkiye İş Bankası Kültür Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 16,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1516),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(383),
                             PublisherName = "Omega Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 17,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1517),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(383),
                             PublisherName = "Kalem Kitap",
                             Status = 0
                         },
                         new
                         {
                             Id = 18,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1518),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(384),
                             PublisherName = "Beyaz Balina Yayınları",
                             Status = 0
                         },
                         new
                         {
                             Id = 19,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1519),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(385),
                             PublisherName = "Profil Yayıncılık",
                             Status = 0
                         },
                         new
                         {
                             Id = 20,
-                            CreatedAt = new DateTime(2025, 4, 20, 4, 54, 14, 584, DateTimeKind.Local).AddTicks(1520),
+                            CreatedAt = new DateTime(2025, 5, 13, 17, 8, 53, 891, DateTimeKind.Local).AddTicks(386),
                             PublisherName = "Dergah Yayınları",
                             Status = 0
                         });
@@ -1422,21 +1435,34 @@ namespace Bookstore.Migrations
                     b.Navigation("Book");
                 });
 
-            modelBuilder.Entity("Bookstore.Models.Cart", b =>
+            modelBuilder.Entity("Bookstore.Models.Order", b =>
+                {
+                    b.HasOne("Bookstore.Models.AppUser", "User")
+                        .WithMany("Orders")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Bookstore.Models.OrderItem", b =>
                 {
                     b.HasOne("Bookstore.Models.Book", "Book")
-                        .WithMany()
-                        .HasForeignKey("BookId");
+                        .WithMany("OrderItems")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
-                    b.HasOne("Bookstore.Models.AppUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("Bookstore.Models.Order", "Order")
+                        .WithMany("Items")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Book");
 
-                    b.Navigation("User");
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -1493,6 +1519,8 @@ namespace Bookstore.Migrations
             modelBuilder.Entity("Bookstore.Models.AppUser", b =>
                 {
                     b.Navigation("Books");
+
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Bookstore.Models.Author", b =>
@@ -1503,11 +1531,18 @@ namespace Bookstore.Migrations
             modelBuilder.Entity("Bookstore.Models.Book", b =>
                 {
                     b.Navigation("BookAuthors");
+
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("Bookstore.Models.Category", b =>
                 {
                     b.Navigation("Books");
+                });
+
+            modelBuilder.Entity("Bookstore.Models.Order", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("Bookstore.Models.Publisher", b =>

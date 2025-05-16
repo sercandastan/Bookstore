@@ -13,7 +13,7 @@ namespace Bookstore.Models.ModelConfigurations
             builder.Property(b => b.EditionNumber).HasColumnType("int").IsRequired();
             builder.Property(b => b.CoverText).HasColumnType("nvarchar").HasMaxLength(256).IsRequired();
             builder.Property(b => b.CoverImage).HasColumnType("varchar").HasMaxLength(256).IsRequired(false);
-
+            builder.Property(b => b.Status).HasConversion<string>();
             builder.Property(b => b.CategoryId).IsRequired();
             builder.Property(b => b.PublisherId).IsRequired();
             builder.Property(b => b.UserId).IsRequired();

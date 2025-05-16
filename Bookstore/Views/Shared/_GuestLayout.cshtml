@@ -15,28 +15,41 @@
     <link rel="icon" type="image/png" href="~/favicon.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
-    
     <link rel="stylesheet" href="~/css/guest.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-
 </head>
 <body>
-
-    <!-- Navbar (Guest) -->
+    <!-- 1) Navbar -->
     @await Html.PartialAsync("~/Views/Shared/Partials/_NavbarGuest.cshtml")
 
-    <!-- Ana İçerik -->
+    <!-- 2) Sayfa içeriği -->
     <main class="container mt-4">
         @RenderBody()
     </main>
 
-    <!-- Footer  -->
+    <!-- 3) Footer -->
     <footer class="footer text-center mt-5 py-3 border-top small text-muted">
         &copy; @DateTime.Now.Year - SatırSatır.com | Tüm hakları saklıdır.
     </footer>
 
-    <!-- Scripts -->
+    <!-- 4) Modalları buraya ekleyin (kapanmadan hemen önce) -->
+    @* Sepet Modal *@
+    @await Html.PartialAsync(
+            "~/Views/Shared/Partials/Modals/_CartModal.cshtml"
+            )
+
+    @* Register Modal *@
+@*     @await Html.PartialAsync(
+            "~/Views/Shared/Partials/Modals/_RegisterModal.cshtml",
+            new Bookstore.Models.ViewModels.Register_VM.Register_VM()
+            ) *@
+
+    <!-- 5) Script’ler (modal HTML’den sonra) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/register.js"></script>
+    <script src="~/js/guestcart.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

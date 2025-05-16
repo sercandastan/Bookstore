@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
-using Bookstore.Areas.AdminPanel.ViewModels.Book_VM;
 using Bookstore.Models;
 using Bookstore.Models.DTOs.Book;
+using Bookstore.Models.ViewModels.Book_VM;
 using Bookstore.Services.AuthorService;
 using Bookstore.Services.BookService;
 using Bookstore.Services.CategoryService;
@@ -111,54 +111,6 @@ namespace Bookstore.Areas.AdminPanel.Controllers
 
 
 
-        //[HttpPost]
-        //public async Task<IActionResult> Create(CreateBook_VM vm)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        await PopulateSelectListsAsync(vm);
-        //        return View(vm);
-        //    }
-
-        //    string fileName = "defaultBookCover.png";
-        //    string uploadDir = Path.Combine(_env.WebRootPath, "BookCoverImages");
-
-        //    if (!Directory.Exists(uploadDir))
-        //        Directory.CreateDirectory(uploadDir);
-
-        //    if (vm.CoverImage != null && vm.CoverImage.Length > 0)
-        //    {
-        //        try
-        //        {
-        //            string extension = Path.GetExtension(vm.CoverImage.FileName);
-        //            fileName = $"{Guid.NewGuid()}{extension}";
-        //            string path = Path.Combine(uploadDir, fileName);
-
-        //            using var stream = new FileStream(path, FileMode.Create);
-        //            await vm.CoverImage.CopyToAsync(stream);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            ModelState.AddModelError("", "Kapak görseli yüklenemedi. Lütfen tekrar deneyin.");
-        //            await PopulateSelectListsAsync(vm);
-        //            return View(vm);
-        //        }
-        //    }
-
-        //    var dto = _mapper.Map<CreateBook_DTO>(vm);
-        //    dto.UserId = _userManager.GetUserId(User);
-        //    dto.CoverImage = $"/BookCoverImages/{fileName}";
-
-        //    await _bookService.AddBookAsync(dto);
-
-        //    TempData["ToastMessage"] = "📚 Kitap başarıyla eklendi!";
-        //    TempData["ToastType"] = "success";
-
-        //    return RedirectToAction("Index");
-        //}
-
-
-
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -263,6 +215,15 @@ namespace Bookstore.Areas.AdminPanel.Controllers
             vm.Authors = new SelectList(await _authorService.GetAllAuthorsAsync(), "Id", "FullName", vm.AuthorIds);
             vm.Categories = new SelectList(await _categoryService.GetAllCategoriesAsync(), "Id", "CategoryName", vm.CategoryId);
             vm.Publishers = new SelectList(await _publisherService.GetAllPublishersAsync(), "Id", "PublisherName", vm.PublisherId);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var book = await _bookService.GetBookDetailByIdAsync(id);
+            if (book == null) return NotFound();
+            var detailsBookVm = _mapper.Map<DetailsBook_VM>(book);
+            return View(detailsBookVm);
         }
     }
 }

@@ -9,32 +9,43 @@
         @foreach (var item in Model)
         {
             <div class="col">
-                <div class="book-card">
-                    <!-- Kapak Görseli -->
-                    <img src="@(string.IsNullOrEmpty(item.CoverImage)
-                        ? "/BookCoverImages/defaultBookCover.png"
-                        : item.CoverImage)"
-                         alt="Kapak Görseli"
-                         class="book-cover" />
+                <a asp-area="UserPanel" asp-controller="Book" asp-action="Details" asp-route-id="@item.Id" style="text-decoration:none;">
+                    <div class="book-card position-relative">
+                        <!-- Kapak Görseli -->
+                        <img src="@(string.IsNullOrEmpty(item.CoverImage) ? "/BookCoverImages/defaultBookCover.png" : item.CoverImage)"
+                             alt="Kapak Görseli"
+                             class="book-cover" />
 
-                    <!-- Sepete Ekle Butonu -->
-                    <button class="cart-button" title="Sepete Ekle">
-                        <i class="bi bi-cart-plus"></i>
-                    </button>
-                    <!-- Kitap Bilgileri -->
-                    <div class="book-card-body">
-                        <h5 class="book-title">@item.Title</h5>
-                        <ul class="book-meta list-unstyled small text-muted mb-3">
-                            <li><strong>Fiyat:</strong> <span class="text-success fw-bold">₺@item.Price.ToString("N2")</span></li>
-                            <li><strong>Yayın:</strong> @item.PublicationYear | Baskı: @item.EditionNumber</li>
-                            <li><strong>Kategori:</strong> @(string.IsNullOrEmpty(item.CategoryName) ? "Yok" : item.CategoryName)</li>
-                            <li><strong>Yayınevi:</strong> @(string.IsNullOrEmpty(item.PublisherName) ? "Yok" : item.PublisherName)</li>
-                            <li><strong>Yazar:</strong> @(item.AuthorNames?.Any() == true ? string.Join(", ", item.AuthorNames) : "Bilinmiyor")</li>
-                        </ul>
-                        <p class="book-description">@item.CoverText?.Substring(0, Math.Min(item.CoverText.Length, 80))...</p>
+                        <!-- Sepete Ekle Butonu -->
+                        <button type="button"
+                                class="cart-button btn btn-sm btn-outline-primary position-absolute top-0 end-0 m-2"
+                                title="Sepete Ekle"
+                                data-book-id="@item.Id"
+                                data-title="@item.Title"
+                                data-price="@item.Price"
+                                data-coverimage="@(string.IsNullOrEmpty(item.CoverImage) ? "/BookCoverImages/defaultBookCover.png" : item.CoverImage)">
+                            <i class="bi bi-cart-plus"></i>
+                        </button>
+
+                        <!-- Kitap Bilgileri -->
+                        <div class="book-card-body">
+                            <h5 class="book-title">@item.Title</h5>
+                            <ul class="book-meta list-unstyled small text-muted mb-3">
+                                <li><strong>Fiyat:</strong> <span class="text-success fw-bold">₺@item.Price.ToString("N2")</span></li>
+                                <li><strong>Yayın:</strong> @item.PublicationYear | Baskı: @item.EditionNumber</li>
+                                <li><strong>Kategori:</strong> @(string.IsNullOrEmpty(item.CategoryName) ? "Yok" : item.CategoryName)</li>
+                                <li><strong>Yayınevi:</strong> @(string.IsNullOrEmpty(item.PublisherName) ? "Yok" : item.PublisherName)</li>
+                                <li><strong>Yazar:</strong> @(item.AuthorNames?.Any() == true ? string.Join(", ", item.AuthorNames) : "Bilinmiyor")</li>
+                            </ul>
+                            <p class="book-description">@item.CoverText?.Substring(0, Math.Min(item.CoverText.Length, 80))...</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         }
     </div>
 </div>
+
+
+}
+

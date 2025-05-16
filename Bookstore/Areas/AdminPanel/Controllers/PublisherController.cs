@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
-using Bookstore.Areas.AdminPanel.ViewModels.Publisher_VM;
 using Bookstore.Models.DTOs.Publisher;
+using Bookstore.Models.ViewModels.Publisher_VM;
 using Bookstore.Services.PublisherService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

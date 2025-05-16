@@ -28,14 +28,15 @@ namespace Bookstore.Data
 
         public DbSet<BookAuthor> BookAuthors { get; set; }
 
-        public DbSet<Cart> Carts { get; set; }
-
         public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderItem> OrderItems { get; set; }
 
         public DbSet<Publisher> Publishers { get; set; }
 
-
-
+     
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

@@ -1,5 +1,12 @@
-﻿using Bookstore.Models;
+﻿using System.Threading.Tasks;
+using AutoMapper;
+using Bookstore.Models;
 using Bookstore.Models.DTOs.Login;
+using Bookstore.Models.DTOs.Register;
+using Bookstore.Models.ViewModels.Login_VM;
+using Bookstore.Models.ViewModels.Register_VM;
+using Bookstore.Services.LoginService;
+using Humanizer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +16,15 @@ namespace Bookstore.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
-        public LoginController(UserManager<AppUser>userManager,SignInManager<AppUser>signInManager)
+        private readonly ILoginService _loginService;
+        private readonly IMapper _mapper;
+
+        public LoginController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ILoginService loginService, IMapper mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _loginService = loginService;
+            _mapper = mapper;
         }
 
         public IActionResult Login()
@@ -21,63 +33,42 @@ namespace Bookstore.Controllers
         }
   
         [HttpPost]
-        public async Task<IActionResult> Login(Login_DTO login)
+
+        public async Task<IActionResult> Login(Login_VM loginVm)
         {
+            if (!ModelState.IsValid)
+                return View(loginVm);
 
-
-
-            if (ModelState.IsValid)
+            var loginDto = _mapper.Map<Login_DTO>(loginVm);
+            var loginResult = await _loginService.LoginAsync(loginDto);
+            if (!loginResult.Success)
             {
-                AppUser user = null;
-
-                if (login.EmailOrUserName.Contains("@"))
-                    user = await _userManager.FindByEmailAsync(login.EmailOrUserName);
-                else
-                    user = await _userManager.FindByNameAsync(login.EmailOrUserName);
-
-                if (user != null)
-                {
-                    bool isPasswordCorrect = await _userManager.CheckPasswordAsync(user, login.Password);
-
-                    if (isPasswordCorrect)
-                    {
-
-
-                        await _signInManager.SignInAsync(user, false);
-                        bool isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
-
-                        var getUser = await _userManager.GetUserAsync(User);
-                        var name = getUser?.Name ?? getUser?.UserName ?? "Kullanıcı";
-
-                        if (isAdmin)
-                        {
-                            TempData["ToastMessage"] = $"👋 {getUser}, hoşgeldin.";
-                            TempData["ToastType"] = "success";
-                            return Redirect("~/AdminPanel/Home/Index");
-                        }
-                        else
-                        {
-                            TempData["ToastMessage"] = $"👋 {getUser}, hoşgeldin.";
-                            TempData["ToastType"] = "success";
-                            return RedirectToAction("Index", "Home", new { area = "UserPanel" });
-                        }
-                    }
-                }
+                ModelState.AddModelError(string.Empty, "E-posta/Kullanıcı adı veya şifre hatalı.");
+                return View(loginVm);
             }
 
-            return View();
+            TempData["ToastMessage"] = $"👋 {loginResult.DisplayName}, hoş geldin.";
+            TempData["ToastType"] = "success";
+
+            if (loginResult.IsAdmin)
+                return RedirectToAction("Index", "Home", new { area = "AdminPanel" });
+
+            return RedirectToAction("Index", "Home", new { area = "UserPanel" });
         }
+   
 
         [HttpGet]
         public async Task<IActionResult> Logout()
         {
             var user = await _userManager.GetUserAsync(User);
             var name = user?.Name ?? user?.UserName ?? "Kullanıcı";
-            await _signInManager.SignOutAsync();
+            await _loginService.LogoutAsync();
 
             TempData["ToastMessage"] = $"👋 {name}, güle güle! Tekrar bekleriz.";
             TempData["ToastType"] = "info";
             return RedirectToAction("Login", "Login");
         }
+
+
     }
 }

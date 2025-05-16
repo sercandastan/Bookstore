@@ -74,12 +74,12 @@ namespace Bookstore.Services.BookService
             var bookEntity = await _bookRepository.FindByIdAsync(id);
             return _mapper.Map<Book_DTO>(bookEntity);
         }
-        public async Task<BookDetail_DTO?> GetBookDetailByIdAsync(int id)
+        public async Task<DetailsBook_DTO?> GetBookDetailByIdAsync(int id)
         {
             var book = await _bookRepository.GetBookByIdWithIncludesAsync(id);
             if (book == null) return null;
 
-            return _mapper.Map<BookDetail_DTO>(book);
+            return _mapper.Map<DetailsBook_DTO>(book);
         }
 
         public async Task<IEnumerable<Book_DTO>> SearchBooksAsync(string keyword)

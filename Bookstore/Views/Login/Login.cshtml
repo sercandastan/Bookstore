@@ -9,7 +9,7 @@
 <div class="container-fluid vh-100 d-flex p-0">
     <!-- Sol Kısım: Görsel, İkon ve Motto -->
     <div class="col-12 col-md-6 d-none d-md-flex auth-left position-relative">
-        <!-- Opsiyonel arka plan resmi eklemek için auth-left CSS güncellenebilir -->
+        
         <div class="text-center">
             <div class="auth-logo mb-4">
                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/sslogoo.png" alt="SatırSatır.com Logo" class="img-fluid" /></a>
@@ -48,9 +48,16 @@
                 </div>
             </form>
             <div class="text-center mt-4">
+                <span>Henüz hesabınız yok mu? </span>
+                <a href="#"
+                   class="text-accent"
+                   data-bs-toggle="modal"
+                   data-bs-target="#registerModal">
+                    <i class="bi bi-person-plus me-1"></i> Kayıt Ol
+                </a>
 
-                <span>Henüz hesabınız yok mu? </span><a asp-action="Register" class="text-accent fw-semibold">Satırlan...</a>
-                
+
+               
             </div>
         </div>
     </div>
@@ -59,5 +66,6 @@
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        @await Html.PartialAsync("~/Views/Shared/Partials/Modals/_RegisterModal.cshtml")
     }
 }
